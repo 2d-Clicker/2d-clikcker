@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Upgrade Data", menuName = "Upgrade System/Upgrade Data")]
 public class UpgradeData : ScriptableObject
 {
-    public string upgradeName;  // 업그레이드 이름 (치명타 데미지, 자동 공격 속도, 골드 획득량 등)
+    public string upgradeName;  // 업그레이드 이름 
     public int maxLevel;        // 최대 레벨
     public float baseValue;     // 기본 능력치 값
     public float increasePerLevel; // 레벨당 증가량

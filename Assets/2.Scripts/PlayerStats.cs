@@ -38,6 +38,7 @@ public class PlayerStats : MonoBehaviour
 
     public void ApplyUpgrade(string upgradeName, float newValue)
     {
+  
         switch (upgradeName)
         {
             case "치명타 데미지":
@@ -53,4 +54,6 @@ public class PlayerStats : MonoBehaviour
 
         UpdateStatsUI();
     }
+
+
 }

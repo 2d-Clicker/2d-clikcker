@@ -1,15 +1,15 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // °ñµå UI Ç¥½Ã¸¦ À§ÇÑ Ãß°¡
+using TMPro; // ê³¨ë“œ UI í‘œì‹œë¥¼ ìœ„í•œ ì¶”ê°€
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance;
 
-    public List<UpgradeData> upgradeList;  // ¾÷±×·¹ÀÌµå µ¥ÀÌÅÍ ¸®½ºÆ®
-    public int playerGold = 100;  // ÇöÀç º¸À¯ °ñµå (Å×½ºÆ®¿ë ±âº»°ª)
+    public List<UpgradeData> upgradeList;  // ì—…ê·¸ë ˆì´ë“œ ë°ì´í„° ë¦¬ìŠ¤íŠ¸
+    public int playerGold = 100;  // í˜„ì¬ ë³´ìœ  ê³¨ë“œ (í…ŒìŠ¤íŠ¸ìš© ê¸°ë³¸ê°’)
 
-    public TextMeshProUGUI goldText;  // ÇöÀç °ñµå¸¦ Ç¥½ÃÇÒ UI (Inspector¿¡¼­ ¿¬°á)
+    public TextMeshProUGUI goldText;  // í˜„ì¬ ê³¨ë“œë¥¼ í‘œì‹œí•  UI (Inspectorì—ì„œ ì—°ê²°)
 
     private Dictionary<string, int> upgradeLevels = new Dictionary<string, int>();
 
@@ -33,52 +33,60 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGoldUI(); // °ÔÀÓ ½ÃÀÛ ½Ã UI ÃÊ±âÈ­
+        UpdateGoldUI(); // ê²Œì„ ì‹œì‘ ì‹œ UI ì´ˆê¸°í™”
     }
 
     public void UpdateGoldUI()
     {
         if (goldText != null)
         {
-            goldText.text = $"°ñµå: {playerGold}";
+            goldText.text = $"ê³¨ë“œ: {playerGold}";
         }
     }
 
     public int GetUpgradeLevel(string upgradeName)
     {
-        return upgradeLevels.ContainsKey(upgradeName) ? upgradeLevels[upgradeName] : 1;
+        return upgradeLevels.ContainsKey(upgradeName) ? upgradeLevels[upgradeName] : 0;
     }
 
     public bool TryUpgrade(string upgradeName)
     {
+
         UpgradeData upgrade = upgradeList.Find(u => u.upgradeName == upgradeName);
-      
+ 
 
         int currentLevel = GetUpgradeLevel(upgradeName);
+
         if (currentLevel >= upgrade.maxLevel)
         {
-            Debug.Log("ÃÖ´ë ·¹º§¿¡ µµ´ŞÇß½À´Ï´Ù.");
+            Debug.Log("ìµœëŒ€ ë ˆë²¨ì´ì•¼");
             return false;
         }
 
         int upgradeCost = upgrade.GetUpgradeCost(currentLevel);
         if (playerGold < upgradeCost)
         {
-            Debug.Log("°ñµå°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+            Debug.Log("ê³¨ë“œ ì—†ì–´ ì§œì‹ì•„");
             return false;
         }
 
-        // °ñµå Â÷°¨
+        //  ê³¨ë“œ ì°¨ê°
         playerGold -= upgradeCost;
         upgradeLevels[upgradeName]++;
 
-        // ÇÃ·¹ÀÌ¾î ´É·ÂÄ¡ Àû¿ë 
+        //  ìƒˆë¡œìš´ ëŠ¥ë ¥ì¹˜ ê³„ì‚°
         float newStatValue = upgrade.GetUpgradeValue(upgradeLevels[upgradeName]);
-        PlayerStats.Instance.ApplyUpgrade(upgradeName, newStatValue);
-        //  UI °»½Å
-        UpdateGoldUI();
 
+        //  PlayerStatsì— ë°˜ì˜
+        if (PlayerStats.Instance != null)
+        {
+            PlayerStats.Instance.ApplyUpgrade(upgradeName, newStatValue);
+        }
+   
+
+        UpdateGoldUI();
         return true;
     }
+
 
 }

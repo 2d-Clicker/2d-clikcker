@@ -20,16 +20,37 @@ public class UpgradeButton : MonoBehaviour
         int level = UpgradeManager.Instance.GetUpgradeLevel(upgradeName);
         UpgradeData upgrade = UpgradeManager.Instance.upgradeList.Find(u => u.upgradeName == upgradeName);
 
+        int upgradeCost = upgrade.GetUpgradeCost(level);
+        int playerGold = UpgradeManager.Instance.playerGold;
 
         levelText.text = $"레벨 {level}";
-        costText.text = upgrade.GetUpgradeCost(level).ToString();
-        upgradeButton.interactable = UpgradeManager.Instance.playerGold >= upgrade.GetUpgradeCost(level);
+        costText.text = upgradeCost.ToString();
 
+        if (playerGold >= upgradeCost)
+        {
+            costText.color = Color.black; 
+        }
+        else
+        {
+            costText.color = Color.red; 
+        }
+        // 버튼 활성화 여부
+        upgradeButton.interactable = playerGold >= upgradeCost;
     }
+
 
     void OnUpgradeClick()
-    { 
+    {
+
+        if (UpgradeManager.Instance.TryUpgrade(upgradeName))
+        {
             UpdateUI();
             UpgradeManager.Instance.UpdateGoldUI();
+        }
+        else
+        {
+            Debug.LogWarning($"ㄴㄴ 안됌");
+        }
     }
+
 }
