@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 499246019}
   - component: {fileID: 499246018}
   m_Layer: 5
-  m_Name: Coin.Txt
+  m_Name: CoinTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
