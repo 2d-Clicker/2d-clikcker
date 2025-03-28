@@ -8,6 +8,6 @@ public class EnemyData : ScriptableObject
     public string enemyName;
     public Sprite enemyImage;
 
-    public float maxHP;
+    public float baseHP;
     public int dropGold;
 }
