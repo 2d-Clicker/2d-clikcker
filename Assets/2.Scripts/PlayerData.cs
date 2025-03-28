@@ -11,17 +11,17 @@ public class PlayerData
     public int weaponAttack = 0; // 무기 공격력
     public int weaponCriticalChance = 0; // 무기 치명타 확률
     
-    public int FinalAttackPower()
+    public int FinalAttackPower() //최종 공격력
     {
         return weaponAttack;
     }
     
-    public int FinalCriticalDamage()
+    public int FinalCriticalDamage() // 최종 치명타 데미지
     {
-        return criticalDamage + weaponCriticalChance;
+        return criticalDamage + weaponCriticalChance; //확률 체크는 공격로직에서.
     }
     
-    public int FinalGoldBonus()
+    public int FinalGoldBonus() //최종 골드 보너스
     {
         return goldBonus;
     }
