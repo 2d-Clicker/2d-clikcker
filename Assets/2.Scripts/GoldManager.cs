@@ -1,22 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GoldManager : MonoBehaviour
 {
-    public Text goldText;
-    public Text ErrorText;
+    public TMP_Text goldText;
     public GameObject PopupError;
 
     private Coroutine PopupCoroutine; //코루틴 중복 실행 방지
   
     private void Start()
     {
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager.Instance가 null입니다! 씬에 GameManager 오브젝트가 있는지 확인하세요.");
+            return;
+        }
+
         UpdateGoldUI();
 
+        goldText = GameObject.Find("Coin/GoldTxt").GetComponent<TMP_Text>();
         PopupError = GameObject.Find("Coin/PopupError");
-        ErrorText.gameObject.SetActive(false);
+        PopupError.gameObject.SetActive(false);
         PopupError.SetActive(false);
     }
 
@@ -61,6 +68,6 @@ public class GoldManager : MonoBehaviour
 
     private void UpdateGoldUI()
     {
-        goldText.text = "Gold: " + GameManager.Instance.playerData.gold;
+        goldText.text =  ""+GameManager.Instance.playerData.gold;
     }
 }
