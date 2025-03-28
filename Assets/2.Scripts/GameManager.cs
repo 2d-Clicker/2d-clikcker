@@ -1,25 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.RestService;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    private PlayerData playerData;
-
-    public Text CoinTxt; // µ·
-    public GameObject PopupError;
+    public PlayerData playerData = new PlayerData();
 
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+        }
         else
+        {
             Destroy(gameObject);
+        }
+    }
 
-        //PlayerData = new PlayerData();
+    public void UpgradeCriticalDamage()
+    {
+        playerData.criticalDamage += 10;
+    }
+
+    public void UpgradeAutoAttack()
+    {
+        playerData.autoAttack += 0.3f;
+    }
+
+    public void UpgradeGoldBonus()
+    {
+        playerData.goldBonus += 1;
     }
 }
