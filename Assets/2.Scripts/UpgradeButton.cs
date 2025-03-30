@@ -23,7 +23,7 @@ public class UpgradeButton : MonoBehaviour
         int upgradeCost = upgrade.GetUpgradeCost(level);
         int playerGold = UpgradeManager.Instance.playerGold;
 
-        levelText.text = $"·¹º§ {level}";
+        levelText.text = $"{level}";
         costText.text = upgradeCost.ToString();
 
         if (playerGold >= upgradeCost)

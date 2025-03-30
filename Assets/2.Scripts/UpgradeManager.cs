@@ -40,7 +40,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (goldText != null)
         {
-            goldText.text = $"골드: {playerGold}";
+            goldText.text = $"{playerGold}";
         }
     }
 
