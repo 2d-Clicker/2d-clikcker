@@ -8,18 +8,6 @@ public class GenerateEnemy : MonoBehaviour
 
     public Enemy currentEnemy;
 
-    void Start()
-    {
-        SpawnEnemy();
-    }
 
-    public void SpawnEnemy()
-    {
-        if (currentEnemy != null)
-            Destroy(currentEnemy.gameObject);
 
-        GameObject enemyUI = Instantiate(enemyUIPrefab, spawnParent);
-        currentEnemy = enemyUI.GetComponent<Enemy>();
-        currentEnemy.Initialize(enemyData);
-    }
 }

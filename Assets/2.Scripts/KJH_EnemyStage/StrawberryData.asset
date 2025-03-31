@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: StrawberryData
   m_EditorClassIdentifier: 
   enemyName: Strawberry
-  enemyImage: {fileID: 21300000, guid: af8cd498f732e5643a0d80d1c1595467, type: 2}
-  baseHP: 10
+  baseHP: 30
   dropGold: 0
