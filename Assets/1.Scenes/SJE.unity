@@ -7778,6 +7778,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 111242306}
   newWeaponNameText: {fileID: 1881063464}
   newWeaponStatsText: {fileID: 407731386}
+  weaponSlots: []
   inventory: {fileID: 1170845245}
   newWeaponPanel: {fileID: 888963391}
 --- !u!224 &888963393
@@ -9892,6 +9893,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 111242306}
   newWeaponNameText: {fileID: 1881063464}
   newWeaponStatsText: {fileID: 407731386}
+  weaponSlots: []
   inventory: {fileID: 1170845245}
   newWeaponPanel: {fileID: 888963391}
 --- !u!114 &1170845245
@@ -10835,6 +10837,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 1684416987}
   newWeaponNameText: {fileID: 2128563316}
   newWeaponStatsText: {fileID: 907063083}
+  weaponSlots: []
   inventory: {fileID: 1282396522}
   newWeaponPanel: {fileID: 1341779219}
 --- !u!114 &1282396522
@@ -11236,7 +11239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1341779220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11316,6 +11319,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 1684416987}
   newWeaponNameText: {fileID: 2128563316}
   newWeaponStatsText: {fileID: 907063083}
+  weaponSlots: []
   inventory: {fileID: 1282396522}
   newWeaponPanel: {fileID: 1341779219}
 --- !u!1 &1347317509

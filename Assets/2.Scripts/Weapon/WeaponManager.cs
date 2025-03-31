@@ -16,6 +16,8 @@ public class WeaponManager : MonoBehaviour
     public TextMeshProUGUI newWeaponNameText; // 새로운 무기 이름
     public TextMeshProUGUI newWeaponStatsText; // 새로운 무기 능력치
 
+    public GameObject[] weaponSlots; // 각 무기 슬롯 - 수정필요
+
     private int currentUpgradeLevel = 0; // 현재 강화 단계
 
     public Inventory inventory; // 인벤토리 참조
@@ -89,11 +91,6 @@ public class WeaponManager : MonoBehaviour
         }
         else
         {
-            // 무기 정보가 없으면 텍스트로 "No weapon equipped" 표시
-            weaponNameText.text = "No weapon equipped.";
-            weaponDescriptionText.text = ""; // 설명 비우기
-            weaponIcon.sprite = null; // 아이콘 비우기
-
             newWeaponPanel.SetActive(false);
         }
     }
