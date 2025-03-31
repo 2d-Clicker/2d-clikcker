@@ -9,8 +9,6 @@ public class StageManager : MonoBehaviour
     public int currentround = 1;
     [SerializeField] TMP_Text stage;
     [SerializeField] TMP_Text round;
-
-
     public void StageCount()
     {
         
@@ -33,7 +31,4 @@ public class StageManager : MonoBehaviour
         currentStage++;
         stage.text = "스테이지" + currentStage;
     }
-
-
-
 }

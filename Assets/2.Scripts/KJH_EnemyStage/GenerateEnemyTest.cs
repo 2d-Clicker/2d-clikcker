@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GenerateEnemy : MonoBehaviour
+public class GenerateEnemyTest : MonoBehaviour
 {
-    public RectTransform spawnParent; // Canvas ¾È¿¡ ÀûÀ» ³ÖÀ» ºÎ¸ğ
-    public GameObject enemyUIPrefab; // ApplePrefab µî
+    public RectTransform spawnParent; // Canvas ì•ˆì— ì ì„ ë„£ì„ ë¶€ëª¨
+    public GameObject enemyUIPrefab; // ApplePrefab ë“±
     public EnemyData enemyData;
+    public HandleAttack handleAttack;
+    public Image hpFill;
 
-    public Enemy currentEnemy;
+    [HideInInspector] public Enemy currentEnemy;
 
     void Start()
     {
@@ -21,5 +24,7 @@ public class GenerateEnemy : MonoBehaviour
         GameObject enemyUI = Instantiate(enemyUIPrefab, spawnParent);
         currentEnemy = enemyUI.GetComponent<Enemy>();
         currentEnemy.Initialize(enemyData);
+        currentEnemy.hpFillImage = hpFill;
+        handleAttack.enemy = currentEnemy;
     }
 }

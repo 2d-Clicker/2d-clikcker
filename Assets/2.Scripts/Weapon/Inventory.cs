@@ -15,20 +15,6 @@ public class Inventory : MonoBehaviour
         Debug.Log(item.itemName + " added to inventory.");
     }
 
-    //// 아이템 제거
-    //public void RemoveItem(Item item)
-    //{
-    //    if (items.Contains(item))
-    //    {
-    //        items.Remove(item);
-    //        Debug.Log(item.itemName + " removed from inventory.");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Item not found in inventory.");
-    //    }
-    //}
-
     // 무기 장착
     public void EquipWeapon(Weapon weapon)
     {
