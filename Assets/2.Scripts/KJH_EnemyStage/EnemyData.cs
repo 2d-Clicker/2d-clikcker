@@ -6,8 +6,6 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public string enemyName;
-    public Sprite enemyImage;
-
     public float baseHP;
     public int dropGold;
 }

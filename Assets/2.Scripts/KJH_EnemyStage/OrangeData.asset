@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: OrangeData
   m_EditorClassIdentifier: 
   enemyName: Orange
-  enemyImage: {fileID: 21300000, guid: 6ef0cf9b92578d143ae3f5b2099941be, type: 2}
-  baseHP: 10
-  dropGold: 0
+  baseHP: 40
+  dropGold: 30
