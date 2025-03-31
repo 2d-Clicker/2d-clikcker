@@ -61,9 +61,9 @@ public class PlayerStats : MonoBehaviour
             case "¿Á»≠ »πµÊ∑Æ ¡ı∞°":
                 goldBonus = newValue;
                 break;
-
         }
 
         UpdateStatsUI();
     }
+
 }

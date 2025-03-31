@@ -3,32 +3,49 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public Image bodyImage;     // 과일 이미지
-    public Image hpFillImage;   // 체력바 Fill
+    public EnemyData enemyData;
+    public Image hpFillImage;
+    public StageManager stageManager;   // Stage 정보 받아오기
+    public EnemySpawner spawner;
 
-    private float maxHP;
-    private float currentHP;
+    [SerializeField] float maxHP;
+    [SerializeField] float currentHP;
+    [SerializeField] float dropMoney;
 
-    public void Initialize(EnemyData data)
+    [SerializeField] float dmg ;
+
+
+    public void Initialize()
     {
-        maxHP = data.baseHP;
+        // 체력 = baseHP × 현재 스테이지
+        maxHP = enemyData.baseHP * stageManager.currentStage;
         currentHP = maxHP;
-        bodyImage.sprite = data.enemyImage;
+        dropMoney = enemyData.dropGold * stageManager.currentStage*3; 
         UpdateHPBar();
     }
-    public void TakeDamage(float damage)
+
+    public void TakeDamage(float dmg)
     {
-        currentHP -= damage;
-        if (currentHP <= 0) currentHP = 0;
+        
+        currentHP -= dmg;
+        if (currentHP < 0) currentHP = 0;
+
         UpdateHPBar();
+
         if (currentHP <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
     void UpdateHPBar()
     {
         if (hpFillImage != null)
             hpFillImage.fillAmount = currentHP / maxHP;
+    }
+    void Die()
+    {
+        stageManager.StageCount();  // 죽으면 스테이지 라운드 증가
+        spawner.OnEnemyKilled();
+        Destroy(gameObject);
     }
 }
