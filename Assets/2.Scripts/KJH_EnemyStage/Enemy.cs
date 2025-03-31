@@ -20,10 +20,10 @@ public class Enemy : MonoBehaviour
     {
         if (enemyData == null || stageManager == null) return;
 
-        dmg = 5 * stageManager.currentStage;
+        // 체력 = baseHP × 현재 스테이지
         maxHP = enemyData.baseHP * stageManager.currentStage;
         currentHP = maxHP;
-
+         
         UpdateHPBar();
     }
 
