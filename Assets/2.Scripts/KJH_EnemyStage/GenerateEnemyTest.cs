@@ -23,7 +23,7 @@ public class GenerateEnemyTest : MonoBehaviour
 
         GameObject enemyUI = Instantiate(enemyUIPrefab, spawnParent);
         currentEnemy = enemyUI.GetComponent<Enemy>();
-        currentEnemy.Initialize(enemyData);
+        currentEnemy.Initialize();
         currentEnemy.hpFillImage = hpFill;
         handleAttack.enemy = currentEnemy;
     }
