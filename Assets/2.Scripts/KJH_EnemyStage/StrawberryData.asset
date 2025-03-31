@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StrawberryData
   m_EditorClassIdentifier: 
   enemyName: Strawberry
-  baseHP: 30
-  dropGold: 0
+  baseHP: 20
+  dropGold: 10

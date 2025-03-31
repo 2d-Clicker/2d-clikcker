@@ -6,30 +6,27 @@ public class Enemy : MonoBehaviour
     public EnemyData enemyData;
     public Image hpFillImage;
     public StageManager stageManager;   // Stage 정보 받아오기
+    public EnemySpawner spawner;
 
     [SerializeField] float maxHP;
     [SerializeField] float currentHP;
+    [SerializeField] float dropMoney;
+
     [SerializeField] float dmg ;
 
 
-    void Start()
-    {
-        Initialize();
-    }
     public void Initialize()
     {
-        if (enemyData == null || stageManager == null) return;
-
         // 체력 = baseHP × 현재 스테이지
         maxHP = enemyData.baseHP * stageManager.currentStage;
         currentHP = maxHP;
-         
+        dropMoney = enemyData.dropGold * stageManager.currentStage*3; 
         UpdateHPBar();
     }
 
     public void TakeDamage(float dmg)
     {
-        dmg =5 * stageManager.currentStage;
+        
         currentHP -= dmg;
         if (currentHP < 0) currentHP = 0;
 
@@ -40,16 +37,15 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
     void UpdateHPBar()
     {
         if (hpFillImage != null)
             hpFillImage.fillAmount = currentHP / maxHP;
     }
-
     void Die()
     {
         stageManager.StageCount();  // 죽으면 스테이지 라운드 증가
+        spawner.OnEnemyKilled();
         Destroy(gameObject);
     }
 }

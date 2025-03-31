@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: LemonData
   m_EditorClassIdentifier: 
   enemyName: Lemon
-  enemyImage: {fileID: 21300000, guid: 4c40a72cc046e30449d72d0ae8d124a5, type: 2}
-  baseHP: 10
-  dropGold: 0
+  baseHP: 30
+  dropGold: 20

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ClickToDamage : MonoBehaviour
 {
-    public float clickDamage = 10f;
+    [SerializeField] float clickDamage;
 
 
-    public void DamageTaggedEnemy()
+    public void ClickDamage()
     {
         GameObject enemy = GameObject.FindWithTag("Enemy");
         if (enemy != null)
