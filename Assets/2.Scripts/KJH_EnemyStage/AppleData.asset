@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: AppleData
   m_EditorClassIdentifier: 
   enemyName: Apple
-  enemyImage: {fileID: 21300000, guid: 8fa98359723d3bb4fb2bf23bdc70fb5d, type: 2}
-  baseHP: 10
+  baseHP: 111.03
   dropGold: 0

@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float dmg)
     {
-        dmg =5 * stageManager.currentStage;
+
         currentHP -= dmg;
         if (currentHP < 0) currentHP = 0;
 

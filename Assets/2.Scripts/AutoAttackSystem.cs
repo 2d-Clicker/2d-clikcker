@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AutoAttackSystem : MonoBehaviour
@@ -40,24 +39,37 @@ public class AutoAttackSystem : MonoBehaviour
             float attackInterval = 1f / PlayerStats.Instance.autoAttackSpeed; // 속도 반영
             yield return new WaitForSeconds(attackInterval);
 
-            int damage = Mathf.RoundToInt(PlayerStats.Instance.baseDamage * PlayerStats.Instance.autoAttackSpeed);
+            //  현재 baseDamage 값 즉시 반영 (업그레이드 적용)
+            int damage = Mathf.RoundToInt(PlayerStats.Instance.baseDamage);
             int gold = Mathf.RoundToInt(10 * PlayerStats.Instance.goldBonus); // 골드 획득량 반영
 
-            ApplyDamage(damage);
+            ApplyDamage();
             GrantGold(gold);
         }
     }
 
-    private void ApplyDamage(int damage)
+    private void ApplyDamage()
     {
-        Debug.Log($" 자동 공 {damage} 데미지.");
-
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+        if (enemy != null)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                // PlayerStats의 baseDamage를 반영
+                float damage = PlayerStats.Instance.baseDamage;
+                enemyScript.TakeDamage(damage);
+                Debug.Log($"자동 공격! {damage} 데미지");
+            }
+        }
     }
+
+
 
     private void GrantGold(int gold)
     {
         UpgradeManager.Instance.playerGold += gold;
         UpgradeManager.Instance.UpdateGoldUI();
-        Debug.Log($" 자동 공격 {gold} 골드");
+        Debug.Log($" 자동 공격 {gold} 골드 획득!");
     }
 }
