@@ -14,11 +14,13 @@ public class WeaponStats : ScriptableObject
     [Header("강화 데이터")]
     public StatUpgrade[] statUpgrades; // 강화 단계에 따른 능력치 증가량
 
+    public Sprite itemIcon; // 무기 아이콘 이미지
+    public string itemDescription; // 무기 설명
+
     public WeaponStats GetStatsForUpgradeLevel(int upgradeLevel)
     {
         if (upgradeLevel < 0 || upgradeLevel >= statUpgrades.Length)
         {
-            Debug.LogWarning("Invalid upgrade level! Returning base stats.");
             return this; // 잘못된 레벨이면 기본값 반환
         }
 
@@ -31,6 +33,9 @@ public class WeaponStats : ScriptableObject
         upgradedStats.baseSpeed = baseSpeed + upgrade.speedIncrease;
         upgradedStats.baseCritChance = baseCritChance + upgrade.critChanceIncrease;
         upgradedStats.baseCritDamage = baseCritDamage + upgrade.critDamageIncrease;
+
+        upgradedStats.itemIcon = itemIcon;
+        upgradedStats.itemDescription = itemDescription;
 
         return upgradedStats;
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b6e89d6256647a75ce94441d60a5, type: 3}
   m_Name: Level1knife
   m_EditorClassIdentifier: 
-  weaponName: PotatoKnife
+  weaponName: "\uAC10\uC790\uCE7C"
   baseDamage: 1
   baseSpeed: 1
   baseCritChance: 0.05
@@ -23,3 +23,10 @@ MonoBehaviour:
     speedIncrease: 1.1
     critChanceIncrease: 0.07
     critDamageIncrease: 0.15
+  - upgradeLevel: 2
+    damageIncrease: 3
+    speedIncrease: 1.2
+    critChanceIncrease: 0.09
+    critDamageIncrease: 0.17
+  itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
+  itemDescription: "\uAC10\uC790\uCE7C\uC744 \uCC29\uC6A9\uD588\uC2B5\uB2C8\uB2E4."
