@@ -40,7 +40,7 @@ public class UpgradeManager : MonoBehaviour
     {
         if (goldText != null)
         {
-            goldText.text = $"골드: {playerGold}";
+            goldText.text = $"{playerGold}";
         }
     }
 
@@ -51,38 +51,30 @@ public class UpgradeManager : MonoBehaviour
 
     public bool TryUpgrade(string upgradeName)
     {
-
         UpgradeData upgrade = upgradeList.Find(u => u.upgradeName == upgradeName);
- 
-
         int currentLevel = GetUpgradeLevel(upgradeName);
 
         if (currentLevel >= upgrade.maxLevel)
         {
-            Debug.Log("최대 레벨이야");
+            Debug.Log("최대 레벨");
             return false;
         }
 
         int upgradeCost = upgrade.GetUpgradeCost(currentLevel);
         if (playerGold < upgradeCost)
         {
-            Debug.Log("골드 없어 짜식아");
+            Debug.Log("골드 부족");
             return false;
         }
 
-        //  골드 차감
         playerGold -= upgradeCost;
         upgradeLevels[upgradeName]++;
-
-        //  새로운 능력치 계산
         float newStatValue = upgrade.GetUpgradeValue(upgradeLevels[upgradeName]);
 
-        //  PlayerStats에 반영
         if (PlayerStats.Instance != null)
         {
             PlayerStats.Instance.ApplyUpgrade(upgradeName, newStatValue);
         }
-   
 
         UpdateGoldUI();
         return true;
