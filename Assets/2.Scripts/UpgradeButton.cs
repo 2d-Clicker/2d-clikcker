@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,9 @@ public class UpgradeButton : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI costText;
     public Button upgradeButton;
+
+    private bool isPressing = false; // 버튼을 누르고 있는지 여부
+    private Coroutine upgradeCoroutine; // 연속 업그레이드용 코루틴
 
     void Start()
     {
@@ -26,22 +30,12 @@ public class UpgradeButton : MonoBehaviour
         levelText.text = $"{level}";
         costText.text = upgradeCost.ToString();
 
-        if (playerGold >= upgradeCost)
-        {
-            costText.color = Color.black; 
-        }
-        else
-        {
-            costText.color = Color.red; 
-        }
-        // 버튼 활성화 여부
+        costText.color = (playerGold >= upgradeCost) ? Color.black : Color.red;
         upgradeButton.interactable = playerGold >= upgradeCost;
     }
 
-
     void OnUpgradeClick()
     {
-
         if (UpgradeManager.Instance.TryUpgrade(upgradeName))
         {
             UpdateUI();
@@ -53,4 +47,5 @@ public class UpgradeButton : MonoBehaviour
         }
     }
 
+   
 }
