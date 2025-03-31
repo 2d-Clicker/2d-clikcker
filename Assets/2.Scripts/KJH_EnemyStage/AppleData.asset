@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: AppleData
   m_EditorClassIdentifier: 
   enemyName: Apple
-  baseHP: 50
-  dropGold: 40
+  baseHP: 111.03
+  dropGold: 0

@@ -25,15 +25,6 @@ public class GoldManager : MonoBehaviour
         PopupError = GameObject.Find("Coin/PopupError");
         PopupError.gameObject.SetActive(false);
         PopupError.SetActive(false);
-
-        if (PopupError != null)
-        {
-            PopupError.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("PopupError 오브젝트를 찾을 수 없습니다!");
-        }
     }
 
     public void GetGold(int amount) //골드 획득

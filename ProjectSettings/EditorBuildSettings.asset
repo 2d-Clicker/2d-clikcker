@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/1.Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/1.Scenes/LYJ.unity
-    guid: 94d546afba428344e8c95fa3e93722d0
-  - enabled: 1
     path: Assets/1.Scenes/StartScene.unity
     guid: 03d7565818c20af47b0a54b6a1302fb4
+  - enabled: 1
+    path: Assets/1.Scenes/CJh.unity
+    guid: 96c295c2348f21148a4aeb4688c798c6
   m_configObjects: {}

@@ -7,7 +7,7 @@ public enum WeaponType
 
     PotatoKnife, // 1 °¨ÀÚ Ä®
     SmallKnife, // 2 ÀÛÀº Ä®
-    BreadKnife, // 3 »§Ä®
+    BluntKnife, // 3 ¹¶ÅöÇÑ Ä®
     SharpKnife, // 4 ³¯Ä«·Î¿î Ä®
     ChefKnife // 5 ½¦ÇÁÀÇ Ä®
 
