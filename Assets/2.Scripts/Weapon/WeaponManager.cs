@@ -29,37 +29,59 @@ public class WeaponManager : MonoBehaviour
 
     void Start()
     {
-        UpdateWeaponUI();
-        UpdateNewWeaponUI(); // 새 UI 업데이트
-        // 모든 패널 비활성화
-        DeactivateAllPanels();
+        InitializeWeapon(); // 게임 시작 시 무기 초기화
+        UpdateWeaponUI(); // UI 업데이트
+        UpdateNewWeaponUI(); 
+        
+        DeactivateAllPanels();// 모든 패널 비활성화
+    }
+
+    // 게임 시작 시 무기 초기화
+    public void InitializeWeapon()
+    {
+        // 게임이 시작되면 기본 능력치로 초기화합니다.
+        currentUpgradeLevel = 0; // 강화 레벨 초기화
+        currentWeaponStats = weaponStats; // 기본 능력치
+        UpdateWeaponUI(); // UI 업데이트
     }
 
     // 장착할 무기 선택
     public void EquipWeapon(WeaponStats newWeaponStats)
     {
-        currentWeaponStats = newWeaponStats;
-        currentUpgradeLevel = 0; // 장착시 강화레벨을 초기화
+        // 새로운 무기를 장착할 때, 기존의 능력치에 누적된 강화 상태를 유지
+        if (currentWeaponStats != null && currentWeaponStats.weaponName == newWeaponStats.weaponName)
+        {
+            // 이미 장착된 무기라면, 강화 레벨 유지
+            currentWeaponStats = newWeaponStats;
+        }
+        else
+        {
+            // 새로운 무기라면, 강화 레벨 초기화
+            currentWeaponStats = newWeaponStats;
+            currentUpgradeLevel = 0; // 강화 상태 초기화
+        }
+
         // 모든 패널 비활성화
         DeactivateAllPanels();
+
         // 선택된 무기에 맞는 패널만 활성화
-        if (newWeaponStats.weaponName == "감자칼")
+        if (currentWeaponStats.weaponName == "감자칼")
         {
             knifeGamja.SetActive(true);
         }
-        else if (newWeaponStats.weaponName == "짧은칼")
+        else if (currentWeaponStats.weaponName == "짧은칼")
         {
             knifeShort.SetActive(true);
         }
-        else if (newWeaponStats.weaponName == "빵 칼")
+        else if (currentWeaponStats.weaponName == "빵 칼")
         {
             knifeBread.SetActive(true);
         }
-        else if (newWeaponStats.weaponName == "식 칼")
+        else if (currentWeaponStats.weaponName == "식 칼")
         {
             knifeKitchen.SetActive(true);
         }
-        else if (newWeaponStats.weaponName == "중식도")
+        else if (currentWeaponStats.weaponName == "중식도")
         {
             knifeChef.SetActive(true);
         }
@@ -73,8 +95,8 @@ public class WeaponManager : MonoBehaviour
         if (currentWeaponStats != null && currentUpgradeLevel < currentWeaponStats.statUpgrades.Length)
         {
             // 강화 레벨에 따른 능력치 계산
-            currentWeaponStats = currentWeaponStats.GetStatsForUpgradeLevel(currentUpgradeLevel);
-            currentUpgradeLevel++;
+            currentWeaponStats = currentWeaponStats.GetStatsForUpgradeLevel(currentUpgradeLevel, currentWeaponStats);
+            currentUpgradeLevel++; // 강화 단계 증가
 
             UpdateWeaponUI(); // 강화된 능력치를 화면에 업데이트
         }
@@ -110,7 +132,6 @@ public class WeaponManager : MonoBehaviour
             {
                 newWeaponIcon.sprite = currentWeaponStats.itemIcon;
             }
-
         }
     }
 

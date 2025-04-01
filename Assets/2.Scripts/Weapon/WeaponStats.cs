@@ -17,27 +17,24 @@ public class WeaponStats : ScriptableObject
     public Sprite itemIcon; // 무기 아이콘 이미지
     public string itemDescription; // 무기 설명
 
-    public WeaponStats GetStatsForUpgradeLevel(int upgradeLevel)
+    // 강화 레벨에 따른 능력치 계산
+    public WeaponStats GetStatsForUpgradeLevel(int upgradeLevel, WeaponStats currentStats)
     {
         if (upgradeLevel < 0 || upgradeLevel >= statUpgrades.Length)
         {
-            return this; // 잘못된 레벨이면 기본값 반환
+            return currentStats; // 잘못된 레벨이면 기존 능력치 그대로 반환
         }
 
         // 강화에 따른 능력치 증가량
         StatUpgrade upgrade = statUpgrades[upgradeLevel];
 
-        WeaponStats upgradedStats = ScriptableObject.CreateInstance<WeaponStats>();
-        upgradedStats.weaponName = weaponName;
-        upgradedStats.baseDamage = baseDamage + upgrade.damageIncrease;
-        upgradedStats.baseSpeed = baseSpeed + upgrade.speedIncrease;
-        upgradedStats.baseCritChance = baseCritChance + upgrade.critChanceIncrease;
-        upgradedStats.baseCritDamage = baseCritDamage + upgrade.critDamageIncrease;
+        // 기존 능력치에 강화값을 추가
+        currentStats.baseDamage += upgrade.damageIncrease;
+        currentStats.baseSpeed += upgrade.speedIncrease;
+        currentStats.baseCritChance += upgrade.critChanceIncrease;
+        currentStats.baseCritDamage += upgrade.critDamageIncrease;
 
-        upgradedStats.itemIcon = itemIcon;
-        upgradedStats.itemDescription = itemDescription;
-
-        return upgradedStats;
+        return currentStats;
     }
 }
 

@@ -17,6 +17,11 @@ MonoBehaviour:
   baseSpeed: 1.5
   baseCritChance: 0.05
   baseCritDamage: 0.1
-  statUpgrades: []
+  statUpgrades:
+  - upgradeLevel: 0
+    damageIncrease: 0
+    speedIncrease: 0
+    critChanceIncrease: 0
+    critDamageIncrease: 0
   itemIcon: {fileID: 21300000, guid: 92a675d17391aed458e07766f7eb162e, type: 3}
   itemDescription: "\uB9DB\uC788\uB294 \uCE7C\uC774\uB2E4."

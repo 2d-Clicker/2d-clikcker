@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: Level2knife
   m_EditorClassIdentifier: 
   weaponName: "\uC9E7\uC740\uCE7C"
-  baseDamage: 25
-  baseSpeed: 1
+  baseDamage: 20
+  baseSpeed: 1.2
   baseCritChance: 0.05
-  baseCritDamage: 0.1
+  baseCritDamage: 0.15
   statUpgrades:
   - upgradeLevel: 1
-    damageIncrease: 50
+    damageIncrease: 40
     speedIncrease: 2
     critChanceIncrease: 0.07
     critDamageIncrease: 0.19
   - upgradeLevel: 2
-    damageIncrease: 50
+    damageIncrease: 55
     speedIncrease: 2.5
     critChanceIncrease: 0.09
     critDamageIncrease: 0.2
