@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         //골드 지급로직
-        GameManager.Instance.playerData.AddGold(dropMoney);
+       GameManager.Instance.playerData.AddGold(dropMoney);
         Debug.Log($"적 처치! {dropMoney} 골드 획득. 현재 골드: {GameManager.Instance.playerData.gold}");
 
         stageManager.StageCount();  // 죽으면 스테이지 라운드 증가
