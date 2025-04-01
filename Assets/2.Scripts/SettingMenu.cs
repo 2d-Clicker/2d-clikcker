@@ -13,6 +13,7 @@ public class SettingMenu : MonoBehaviour
     public GameObject clickArea;
 
     public GameObject InSettingPanel;
+    public Button ExitBtn;
 
     void Start()
     {
