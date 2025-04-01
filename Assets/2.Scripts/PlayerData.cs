@@ -21,13 +21,23 @@ public class PlayerData
     public float equippedCritDamage = 0;
     public float equippedGoldBonus = 0;
 
+    public float CalculateFinalDamage() //최종데미지
+    {
+        // 기본 데미지 계산
+        float normalDamage = baseDamage + (attackUpgradeLevel * 5) + equippedWeaponAttack; //5는 추가 공격력.밸런스조정때 수정하기
+
+        // 치명타 확률 체크 (치명타 확률은 0~100%)
+        bool isCritical = Random.value < (FinalCritChance() / 100f);
+
+        // 최종 데미지 적용
+        float finalDamage = isCritical ? normalDamage * FinalCritDamage() : normalDamage;
+
+        Debug.Log(isCritical ? $"치명타 {finalDamage} 데미지" : $" 일반 공격 {finalDamage} 데미지");
+        return finalDamage;
+    }
     public float FinalAutoAttack()
     {
         return autoAttackSpeed + (attackUpgradeLevel * 0.05f);
-    }
-    public float FinalAttackPower()
-    {
-        return baseDamage + (attackUpgradeLevel * 5) + equippedWeaponAttack;
     }
 
     public float FinalCritChance()

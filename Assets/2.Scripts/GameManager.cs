@@ -16,5 +16,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (playerData == null)
+        {
+            playerData = new PlayerData(); //playerData가 null이면 새로 할당
+        }
     }
 }

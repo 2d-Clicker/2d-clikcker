@@ -65,7 +65,6 @@ public class AutoAttackSystem : MonoBehaviour
     }
 
 
-
     private void GrantGold(int gold)
     {
         UpgradeManager.Instance.playerGold += gold;

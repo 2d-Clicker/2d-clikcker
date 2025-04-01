@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
     {
         if (playerData == null) return; //playerdata가 없으면 실행x
 
-        if (damageText != null) damageText.text = $"기본 데미지: {playerData.FinalAttackPower()}";
+        if (damageText != null) damageText.text = $"기본 데미지: {playerData.CalculateFinalDamage()}";
         if (criticalText != null) criticalText.text = $"치명타 확률: {playerData.FinalCritChance()}%";
         if (criticalDmgText != null) criticalDmgText.text = $"치명타 데미지: {playerData.FinalCritDamage()}x";
         if (autoAttackText != null) autoAttackText.text = $"자동 공격 속도: {playerData.FinalAutoAttack()}x";
