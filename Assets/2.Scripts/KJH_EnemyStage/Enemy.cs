@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         stageManager.StageCount();  // 죽으면 스테이지 라운드 증가
-        spawner.OnEnemyKilled();
+       // spawner.OnEnemyKilled();
         Destroy(gameObject);
     }
 }
