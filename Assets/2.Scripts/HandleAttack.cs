@@ -7,8 +7,8 @@ public class HandleAttack : MonoBehaviour
 
     public void OnAttack()
     {
-        float damage = PlayerStats.Instance.baseDamage;
-        enemy.TakeDamage(damage);
+        //float damage = PlayerStats.Instance.baseDamage;
+        //enemy.TakeDamage(damage);
 
 
         if (clickParticle != null)
