@@ -29,10 +29,20 @@ public class WeaponManager : MonoBehaviour
 
     void Start()
     {
-        UpdateWeaponUI();
-        UpdateNewWeaponUI(); // 새 UI 업데이트
-        // 모든 패널 비활성화
-        DeactivateAllPanels();
+        InitializeWeapon(); // 게임 시작 시 무기 초기화
+        UpdateWeaponUI(); // UI 업데이트
+        UpdateNewWeaponUI(); 
+        
+        DeactivateAllPanels();// 모든 패널 비활성화
+    }
+
+    // 게임 시작 시 무기 초기화
+    public void InitializeWeapon()
+    {
+        // 게임이 시작되면 기본 능력치로 초기화합니다.
+        currentUpgradeLevel = 0; // 강화 레벨 초기화
+        currentWeaponStats = weaponStats; // 기본 능력치
+        UpdateWeaponUI(); // UI 업데이트
     }
 
     // 장착할 무기 선택
