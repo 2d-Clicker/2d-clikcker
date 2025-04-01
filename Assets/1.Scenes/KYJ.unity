@@ -1205,8 +1205,8 @@ GameObject:
   - component: {fileID: 205351569}
   - component: {fileID: 205351568}
   - component: {fileID: 205351567}
-  - component: {fileID: 205351570}
   - component: {fileID: 205351571}
+  - component: {fileID: 205351572}
   m_Layer: 5
   m_Name: ClickArea
   m_TagString: Untagged
@@ -1277,9 +1277,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 205351570}
-        m_TargetAssemblyTypeName: HandleAttack, Assembly-CSharp
-        m_MethodName: OnAttack
+      - m_Target: {fileID: 205351571}
+        m_TargetAssemblyTypeName: ClickToDamage, Assembly-CSharp
+        m_MethodName: ClickDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1289,9 +1289,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 205351571}
-        m_TargetAssemblyTypeName: ClickToDamage, Assembly-CSharp
-        m_MethodName: ClickDamage
+      - m_Target: {fileID: 205351572}
+        m_TargetAssemblyTypeName: HandleAttack, Assembly-CSharp
+        m_MethodName: OnAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1339,19 +1339,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205351565}
   m_CullTransparentMesh: 1
---- !u!114 &205351570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205351565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce756cb463702ee45949452949bdabc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickParticle: {fileID: 4198426637795876447, guid: 52693552fe589bc4ba16850da84e076c, type: 3}
 --- !u!114 &205351571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,6 +1351,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cebe4ddd189c204da835201d67ac9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &205351572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205351565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce756cb463702ee45949452949bdabc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickParticle: {fileID: 4198426637795876447, guid: 52693552fe589bc4ba16850da84e076c, type: 3}
 --- !u!1 &226806369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   spawnParent: {fileID: 1170863293}
   enemyUIPrefab: {fileID: 5206947814649935181, guid: 9479313e9eb9a7c4496076a5fd34dc8c, type: 3}
   enemyData: {fileID: 11400000, guid: 300bad1b9cace404fa4ea28f8d940050, type: 2}
-  handleAttack: {fileID: 205351570}
+  handleAttack: {fileID: 0}
   hpFill: {fileID: 1816629339}
   currentEnemy: {fileID: 0}
 --- !u!1 &285731940
