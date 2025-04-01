@@ -36,7 +36,7 @@ public class AutoAttackSystem : MonoBehaviour
     {
         while (PlayerStats.Instance.autoAttackSpeed > 0)
         {
-            float attackInterval = 1f / PlayerStats.Instance.autoAttackSpeed; // 속도 반영
+            float attackInterval = 5f / PlayerStats.Instance.autoAttackSpeed; // 속도 반영
             yield return new WaitForSeconds(attackInterval);
 
             //  현재 baseDamage 값 즉시 반영 (업그레이드 적용)
