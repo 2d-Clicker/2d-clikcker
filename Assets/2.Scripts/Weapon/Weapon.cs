@@ -36,6 +36,4 @@ public class Weapon : Item
         return weaponDamage;
     }
 
-
-
 }
