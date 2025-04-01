@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -92,6 +92,7 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: 7779e3fec0ae3b2468ceb71ff8fcc601, type: 2}
   hpFillImage: {fileID: 1612402636046921064}
   stageManager: {fileID: 0}
+  spawner: {fileID: 0}
   maxHP: 0
   currentHP: 0
   dropMoney: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   enemyData: {fileID: 0}
   hpFillImage: {fileID: 0}
   stageManager: {fileID: 0}
+  spawner: {fileID: 0}
   maxHP: 0
   currentHP: 0
   dropMoney: 0
