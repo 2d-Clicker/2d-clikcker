@@ -23,9 +23,13 @@ public class WeaponManager : MonoBehaviour
 
     private int currentUpgradeLevel = 0; // 현재 강화 단계
 
-    public Inventory inventory; // 인벤토리 참조
+    public GoldManager goldManager; // goldManager 참조
+    public Inventory inventory; // inventory 참조
     private Weapon equippedWeapon; // 장착된 무기
     private WeaponStats currentWeaponStats; // 현재 장착된 무기 정보
+
+    // 강화 금액 설정
+    private Dictionary<string, int> weaponUpgradeCosts = new Dictionary<string, int>();
 
     void Start()
     {
@@ -34,6 +38,18 @@ public class WeaponManager : MonoBehaviour
         UpdateNewWeaponUI(); 
         
         DeactivateAllPanels();// 모든 패널 비활성화
+
+        InitializeWeaponUpgradeCosts();  // 무기별 강화 금액 초기화
+    }
+
+    // 무기별 강화 금액 설정
+    private void InitializeWeaponUpgradeCosts()
+    {
+        weaponUpgradeCosts.Add("KnifeGamja", 5); // 무기당 강화 비용
+        weaponUpgradeCosts.Add("KnifeShort", 150);
+        weaponUpgradeCosts.Add("KnifeBread", 500);
+        weaponUpgradeCosts.Add("KnifeKitchen", 3000);
+        weaponUpgradeCosts.Add("KnifeChef", 10000);
     }
 
     // 게임 시작 시 무기 초기화
@@ -89,16 +105,33 @@ public class WeaponManager : MonoBehaviour
         UpdateWeaponUI(); // UI 업데이트
     }
 
-    // 무기 강화
-    public void UpgradeWeapon()
+    public void UpgradeWeapon(string weaponName)
     {
         if (currentWeaponStats != null && currentUpgradeLevel < currentWeaponStats.statUpgrades.Length)
         {
-            // 강화 레벨에 따른 능력치 계산
-            currentWeaponStats = currentWeaponStats.GetStatsForUpgradeLevel(currentUpgradeLevel, currentWeaponStats);
-            currentUpgradeLevel++; // 강화 단계 증가
+            // 현재 장착된 무기의 이름을 받아서 해당 무기의 강화 비용을 확인
+            if (weaponUpgradeCosts.ContainsKey(weaponName))
+            {
+                int upgradeCost = weaponUpgradeCosts[weaponName];
 
-            UpdateWeaponUI(); // 강화된 능력치를 화면에 업데이트
+                // 강화 금액이 충분한지 체크하고, 골드 소모
+                if (goldManager.SpendGold(upgradeCost))
+                {
+                    // 강화 레벨에 따른 능력치 계산
+                    currentWeaponStats = currentWeaponStats.GetStatsForUpgradeLevel(currentUpgradeLevel, currentWeaponStats);
+                    currentUpgradeLevel++; // 강화 단계 증가
+
+                    UpdateWeaponUI(); // 강화된 능력치를 화면에 업데이트
+                }
+                else
+                {
+                    Debug.Log("골드가 부족합니다.");
+                }
+            }
+            else
+            {
+                Debug.Log("해당 무기의 강화 비용을 찾을 수 없습니다.");
+            }
         }
         else
         {
