@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats Instance;
+    public PlayerData playerData;
 
     public float baseDamage = 10f; // 기본 공격력 추가
     public float criticalChance = 5f; // 치명타 확률 추가
@@ -30,16 +31,20 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        if (playerData == null)
+            playerData = new PlayerData();
         UpdateStatsUI();
     }
 
     public void UpdateStatsUI()
     {
-        if (damageText != null) damageText.text = $"기본 데미지: {baseDamage}";
-        if (criticalText != null) criticalText.text = $"치명타 확률: {criticalChance}%";
-        if (criticalDmgText != null) criticalDmgText.text = $"치명타 데미지: {criticalDamage}x";
-        if (autoAttackText != null) autoAttackText.text = $"자동 공격 속도: {autoAttackSpeed}x";
-        if (goldBonusText != null) goldBonusText.text = $"골드 획득량: {goldBonus}%";
+        if (playerData == null) return; //playerdata가 없으면 실행x
+
+        if (damageText != null) damageText.text = $"기본 데미지: {playerData.CalculateFinalDamage()}";
+        if (criticalText != null) criticalText.text = $"치명타 확률: {playerData.FinalCritChance()}%";
+        if (criticalDmgText != null) criticalDmgText.text = $"치명타 데미지: {playerData.FinalCritDamage()}x";
+        if (autoAttackText != null) autoAttackText.text = $"자동 공격 속도: {playerData.FinalAutoAttack()}x";
+        if (goldBonusText != null) goldBonusText.text = $"골드 획득량: {playerData.FinalGoldBonus()}%";
     }
 
     public void ApplyUpgrade(string upgradeName, float newValue)
@@ -47,19 +52,19 @@ public class PlayerStats : MonoBehaviour
         switch (upgradeName)
         {
             case "기본 데미지":
-                baseDamage = newValue;
+                playerData.baseDamage = newValue;
                 break;
             case "치명타 확률":
-                criticalChance = newValue;
+                playerData.criticalChance = newValue;
                 break;
             case "치명타 데미지":
-                criticalDamage = newValue;
+                playerData.criticalDamage = newValue;
                 break;
             case "자동공격":
-                autoAttackSpeed = newValue;
+                playerData.autoAttackSpeed = newValue;
                 break;
             case "재화 획득량 증가":
-                goldBonus = newValue;
+                playerData.goldBonus = newValue;
                 break;
         }
 

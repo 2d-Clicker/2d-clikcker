@@ -21,8 +21,8 @@ public class GoldManager : MonoBehaviour
 
         UpdateGoldUI();
 
-        goldText = GameObject.Find("Coin/GoldTxt").GetComponent<TMP_Text>();
-        PopupError = GameObject.Find("Coin/PopupError");
+        goldText = GameObject.Find("GoldTxt").GetComponent<TMP_Text>();
+        PopupError = GameObject.Find("PopupError");
         PopupError.gameObject.SetActive(false);
         PopupError.SetActive(false);
 
@@ -39,6 +39,7 @@ public class GoldManager : MonoBehaviour
     public void GetGold(int amount) //°ñµå È¹µæ
     {
         GameManager.Instance.playerData.gold += amount;
+        Debug.Log($"°ñµå »ç¿ë. ³²Àº °ñµå: {GameManager.Instance.playerData.gold}");
         UpdateGoldUI();
     }
 
@@ -47,11 +48,13 @@ public class GoldManager : MonoBehaviour
         if (GameManager.Instance.playerData.gold >= amount)
         {
             GameManager.Instance.playerData.gold -= amount;
+            Debug.Log($"°ñµå »ç¿ë. ³²Àº °ñµå: {GameManager.Instance.playerData.gold}");
             UpdateGoldUI();
             return true;
         }
         else
         {
+            Debug.Log("°ñµå ºÎÁ·");
             ShowPopup();
             return false;
         }
@@ -78,5 +81,6 @@ public class GoldManager : MonoBehaviour
     private void UpdateGoldUI()
     {
         goldText.text =  ""+GameManager.Instance.playerData.gold;
+        Debug.Log("°ñµåUI °»½Å: " + goldText.text); 
     }
 }
