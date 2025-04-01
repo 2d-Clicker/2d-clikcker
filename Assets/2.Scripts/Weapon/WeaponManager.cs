@@ -6,8 +6,13 @@ using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
+    public GameObject knifeGamja;
+    public GameObject knifeShort;
+    public GameObject knifeBread;
+    public GameObject knifeKitchen;
+    public GameObject knifeChef;
+
     public WeaponStats weaponStats; // 무기 강화 능력치
-    public WeaponStats currentWeaponStats; // 현재 무기 능력치
     public Image weaponIcon; // 무기 아이콘
     public TextMeshProUGUI weaponNameText; // 무기 이름
     public TextMeshProUGUI weaponDescriptionText; // 무기 설명
@@ -16,19 +21,18 @@ public class WeaponManager : MonoBehaviour
     public TextMeshProUGUI newWeaponNameText; // 새로운 무기 이름
     public TextMeshProUGUI newWeaponStatsText; // 새로운 무기 능력치
 
-    public GameObject[] weaponSlots; // 각 무기 슬롯 - 수정필요
-
     private int currentUpgradeLevel = 0; // 현재 강화 단계
 
     public Inventory inventory; // 인벤토리 참조
     private Weapon equippedWeapon; // 장착된 무기
-
-    public GameObject newWeaponPanel; // 새 UI의 Panel
+    private WeaponStats currentWeaponStats; // 현재 장착된 무기 정보
 
     void Start()
     {
         UpdateWeaponUI();
         UpdateNewWeaponUI(); // 새 UI 업데이트
+        // 모든 패널 비활성화
+        DeactivateAllPanels();
     }
 
     // 장착할 무기 선택
@@ -36,10 +40,31 @@ public class WeaponManager : MonoBehaviour
     {
         currentWeaponStats = newWeaponStats;
         currentUpgradeLevel = 0; // 장착시 강화레벨을 초기화
-        newWeaponPanel.SetActive(true);
+        // 모든 패널 비활성화
+        DeactivateAllPanels();
+        // 선택된 무기에 맞는 패널만 활성화
+        if (newWeaponStats.weaponName == "감자칼")
+        {
+            knifeGamja.SetActive(true);
+        }
+        else if (newWeaponStats.weaponName == "짧은칼")
+        {
+            knifeShort.SetActive(true);
+        }
+        else if (newWeaponStats.weaponName == "빵 칼")
+        {
+            knifeBread.SetActive(true);
+        }
+        else if (newWeaponStats.weaponName == "식 칼")
+        {
+            knifeKitchen.SetActive(true);
+        }
+        else if (newWeaponStats.weaponName == "중식도")
+        {
+            knifeChef.SetActive(true);
+        }
 
-        UpdateWeaponUI(); // 무기 정보를 UI에 업데이트
-        UpdateNewWeaponUI(); // 새 UI 업데이트
+        UpdateWeaponUI(); // UI 업데이트
     }
 
     // 무기 강화
@@ -86,12 +111,6 @@ public class WeaponManager : MonoBehaviour
                 newWeaponIcon.sprite = currentWeaponStats.itemIcon;
             }
 
-            // 장착된 무기 활성화 여부 확인
-            newWeaponPanel.SetActive(true);
-        }
-        else
-        {
-            newWeaponPanel.SetActive(false);
         }
     }
 
@@ -114,15 +133,18 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
-    public void EquipWeaponFromList(WeaponStats newWeaponStats)
-    {
-        EquipWeapon(newWeaponStats);
-    }
-
     // UI 버튼 클릭으로 장착하기
     public void OnEquipButtonClicked(WeaponStats weaponToEquip)
     {
         EquipWeapon(weaponToEquip); // 장착할 무기 정보를 전달
     }
 
+    private void DeactivateAllPanels()
+    {
+        knifeGamja.SetActive(false);
+        knifeShort.SetActive(false);
+        knifeBread.SetActive(false);
+        knifeKitchen.SetActive(false);
+        knifeChef.SetActive(false);
+    }
 }

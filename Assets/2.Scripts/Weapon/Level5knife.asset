@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b6e89d6256647a75ce94441d60a5, type: 3}
   m_Name: Level5knife
   m_EditorClassIdentifier: 
-  weaponName: ChefKnife
-  baseDamage: 0
-  baseSpeed: 0
-  baseCritChance: 0
-  baseCritDamage: 0
+  weaponName: "\uC911\uC2DD\uB3C4"
+  baseDamage: 100
+  baseSpeed: 3
+  baseCritChance: 0.05
+  baseCritDamage: 0.1
   statUpgrades: []
+  itemIcon: {fileID: 21300000, guid: f2f5dc897648fab43acef14ede2b444a, type: 3}
+  itemDescription: "\uC774\uAC78 \uB4E0 \uB098, \uBA4B\uC788\uB2E4."

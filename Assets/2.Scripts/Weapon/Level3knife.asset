@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a2b6e89d6256647a75ce94441d60a5, type: 3}
   m_Name: Level3knife
   m_EditorClassIdentifier: 
-  weaponName: BreadKnife
-  baseDamage: 0
-  baseSpeed: 0
-  baseCritChance: 0
-  baseCritDamage: 0
+  weaponName: "\uBE75 \uCE7C"
+  baseDamage: 50
+  baseSpeed: 1.5
+  baseCritChance: 0.05
+  baseCritDamage: 0.1
   statUpgrades: []
+  itemIcon: {fileID: 21300000, guid: 92a675d17391aed458e07766f7eb162e, type: 3}
+  itemDescription: "\uB9DB\uC788\uB294 \uCE7C\uC774\uB2E4."

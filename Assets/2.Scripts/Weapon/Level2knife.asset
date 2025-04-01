@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2knife
   m_EditorClassIdentifier: 
   weaponName: "\uC9E7\uC740\uCE7C"
-  baseDamage: 90
+  baseDamage: 25
   baseSpeed: 1
   baseCritChance: 0.05
   baseCritDamage: 0.1
