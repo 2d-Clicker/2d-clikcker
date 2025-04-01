@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class ClickToDamage : MonoBehaviour
 {
-    [SerializeField] float clickDamage;
-
-
+ 
     public void ClickDamage()
     {
         GameObject enemy = GameObject.FindWithTag("Enemy");
@@ -13,7 +11,10 @@ public class ClickToDamage : MonoBehaviour
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript != null)
             {
-                enemyScript.TakeDamage(clickDamage);
+                // PlayerStats의 baseDamage를 반영
+                float damage = PlayerStats.Instance.baseDamage;
+                enemyScript.TakeDamage(damage);
+                Debug.Log($"클릭 {damage} 데미지");
             }
         }
     }

@@ -10,8 +10,6 @@ public class UpgradeButton : MonoBehaviour
     public TextMeshProUGUI costText;
     public Button upgradeButton;
 
-    private bool isPressing = false; // 버튼을 누르고 있는지 여부
-    private Coroutine upgradeCoroutine; // 연속 업그레이드용 코루틴
 
     void Start()
     {
