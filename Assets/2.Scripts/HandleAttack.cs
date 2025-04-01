@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class HandleAttack : MonoBehaviour
 {
-    public Enemy enemy;
     public ParticleSystem clickParticle;
 
     public void OnAttack()
     {
-        float damage = PlayerStats.Instance.baseDamage;
-        enemy.TakeDamage(damage);
-
-
         if (clickParticle != null)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
