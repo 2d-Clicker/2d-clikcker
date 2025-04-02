@@ -322,6 +322,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
   baseDamage: 10
   criticalChance: 5
   criticalDamage: 1
@@ -1830,6 +1835,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
 --- !u!4 &457967336
 Transform:
   m_ObjectHideFlags: 0
@@ -2060,6 +2070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4462611578022735976, guid: 090e81827b6470a4588b6ee32bf0427a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4639373805617407305, guid: 090e81827b6470a4588b6ee32bf0427a, type: 3}
       propertyPath: inventory
       value: 
@@ -2140,6 +2154,10 @@ PrefabInstance:
       propertyPath: weaponDescriptionText
       value: 
       objectReference: {fileID: 1908574200}
+    - target: {fileID: 9030343967356302258, guid: 090e81827b6470a4588b6ee32bf0427a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

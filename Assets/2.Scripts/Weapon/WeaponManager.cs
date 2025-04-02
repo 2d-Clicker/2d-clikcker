@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         UpdateWeaponUI(); // UI 업데이트
         UpdateNewWeaponUI(); 
         
-        DeactivateAllPanels();// 모든 패널 비활성화
+       
 
         InitializeWeaponUpgradeCosts();  // 무기별 강화 금액 초기화
     }
