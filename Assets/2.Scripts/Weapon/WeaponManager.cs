@@ -37,7 +37,7 @@ public class WeaponManager : MonoBehaviour
         UpdateWeaponUI(); // UI 업데이트
         UpdateNewWeaponUI(); 
         
-        DeactivateAllPanels();// 모든 패널 비활성화
+       
 
         InitializeWeaponUpgradeCosts();  // 무기별 강화 금액 초기화
     }
@@ -109,7 +109,6 @@ public class WeaponManager : MonoBehaviour
         }
 
         UpdateWeaponUI(); // UI 업데이트
-        MarkWeaponAsBought(newWeaponStats.weaponName);// 무기 구매 여부 업데이트
     }
 
     public void UpgradeWeapon(string weaponName)
@@ -225,28 +224,6 @@ public class WeaponManager : MonoBehaviour
                 return PlayerStats.Instance.playerData.hasBoughtKnifeChef;
             default:
                 return false;
-        }
-    }
-
-    private void MarkWeaponAsBought(string weaponName)
-    {
-        switch (weaponName)
-        {
-            case "감자칼":
-                PlayerStats.Instance.playerData.hasBoughtKnifeGamja = true;
-                break;
-            case "짧은칼":
-                PlayerStats.Instance.playerData.hasBoughtKnifeShort = true;
-                break;
-            case "빵 칼":
-                PlayerStats.Instance.playerData.hasBoughtKnifeBread = true;
-                break;
-            case "식 칼":
-                PlayerStats.Instance.playerData.hasBoughtKnifeKitchen = true;
-                break;
-            case "중식도":
-                PlayerStats.Instance.playerData.hasBoughtKnifeChef = true;
-                break;
         }
     }
 }

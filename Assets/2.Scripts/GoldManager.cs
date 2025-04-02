@@ -84,7 +84,7 @@ public class GoldManager : MonoBehaviour
         PopupError.SetActive(false);
     }
 
-    public int GetCurrentGold()
+    public int GetCurrentGold() //현재 골드를 반환하는 로직
     {
         return PlayerStats.Instance.playerData.gold;
     }
