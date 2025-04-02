@@ -23,6 +23,12 @@ public class UpgradeButton : MonoBehaviour
         UpdateUI();
         upgradeButton.onClick.AddListener(OnUpgradeClick);
     }
+    private void Update()
+    {
+        
+      UpdateUI();
+        
+    }
 
     void UpdateUI()
     {
