@@ -92,6 +92,5 @@ public class GoldManager : MonoBehaviour
     public void UpdateGoldUI()
     {
         goldText.text = PlayerStats.Instance.playerData.gold.ToString();
-        Debug.Log("°ñµå UI °»½Å: " + goldText.text);
     }
 }
