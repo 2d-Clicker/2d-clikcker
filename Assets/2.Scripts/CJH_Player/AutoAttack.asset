@@ -17,4 +17,4 @@ MonoBehaviour:
   baseValue: 10
   increasePerLevel: 2
   baseCost: 100
-  costMultiplier: 0.8
+  costMultiplier: 1.5
