@@ -86,6 +86,5 @@ public class UpgradeManager : MonoBehaviour
         return true;
     }
 
-
 }
 
