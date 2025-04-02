@@ -66,7 +66,7 @@ public class GoldManager : MonoBehaviour
         return false;
 }
 
-    void ShowPopup() //°ñµå ºÎÁ·½Ã ÆË¾÷
+    public void ShowPopup() //°ñµå ºÎÁ·½Ã ÆË¾÷
     {
         if(PopupCoroutine != null)
         {
@@ -82,6 +82,11 @@ public class GoldManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         PopupError.SetActive(false);
+    }
+
+    public int GetCurrentGold()
+    {
+        return PlayerStats.Instance.playerData.gold;
     }
 
     public void UpdateGoldUI()
