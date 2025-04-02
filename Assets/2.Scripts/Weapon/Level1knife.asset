@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Level1knife
   m_EditorClassIdentifier: 
   weaponName: "\uAC10\uC790\uCE7C"
-  baseDamage: 5
-  baseSpeed: 1
-  baseCritChance: 0.03
-  baseCritDamage: 0.1
+  baseDamage: 1
+  baseSpeed: 0
+  baseCritChance: 0.01
+  baseCritDamage: 0.11
   statUpgrades:
   - upgradeLevel: 1
     damageIncrease: 2
@@ -30,3 +30,4 @@ MonoBehaviour:
     critDamageIncrease: 0.11
   itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
   itemDescription: "\uAC10\uC790\uB098~ \uACFC\uC77C\uC774\uB098~"
+  upgradeLevel: 0

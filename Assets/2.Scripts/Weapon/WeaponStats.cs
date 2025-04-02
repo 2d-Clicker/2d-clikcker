@@ -17,6 +17,8 @@ public class WeaponStats : ScriptableObject
     public Sprite itemIcon; // 무기 아이콘 이미지
     public string itemDescription; // 무기 설명
 
+    [HideInInspector] public int upgradeLevel = 0; // 현재 강화 레벨
+
     // 강화 레벨에 따른 능력치 계산
     public WeaponStats GetStatsForUpgradeLevel(int upgradeLevel, WeaponStats currentStats)
     {
@@ -35,6 +37,17 @@ public class WeaponStats : ScriptableObject
         currentStats.baseCritDamage += upgrade.critDamageIncrease;
 
         return currentStats;
+    }
+
+    // 무기 능력치를 기본값으로 복원하는 메서드
+    public void ResetToDefault()
+    {
+        baseDamage = statUpgrades[0].damageIncrease;
+        baseSpeed = statUpgrades[0].speedIncrease;
+        baseCritChance = statUpgrades[0].critChanceIncrease;
+        baseCritDamage = statUpgrades[0].critDamageIncrease;
+
+        upgradeLevel = 0; // 강화 레벨 초기화
     }
 }
 
