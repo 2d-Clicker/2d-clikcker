@@ -109,7 +109,6 @@ public class WeaponManager : MonoBehaviour
         }
 
         UpdateWeaponUI(); // UI ¾÷µ¥ÀÌÆ®
-        MarkWeaponAsBought(newWeaponStats.weaponName);// ¹«±â ±¸¸Å ¿©ºÎ ¾÷µ¥ÀÌÆ®
     }
 
     public void UpgradeWeapon(string weaponName)
@@ -225,28 +224,6 @@ public class WeaponManager : MonoBehaviour
                 return PlayerStats.Instance.playerData.hasBoughtKnifeChef;
             default:
                 return false;
-        }
-    }
-
-    private void MarkWeaponAsBought(string weaponName)
-    {
-        switch (weaponName)
-        {
-            case "°¨ÀÚÄ®":
-                PlayerStats.Instance.playerData.hasBoughtKnifeGamja = true;
-                break;
-            case "ÂªÀºÄ®":
-                PlayerStats.Instance.playerData.hasBoughtKnifeShort = true;
-                break;
-            case "»§ Ä®":
-                PlayerStats.Instance.playerData.hasBoughtKnifeBread = true;
-                break;
-            case "½Ä Ä®":
-                PlayerStats.Instance.playerData.hasBoughtKnifeKitchen = true;
-                break;
-            case "Áß½Äµµ":
-                PlayerStats.Instance.playerData.hasBoughtKnifeChef = true;
-                break;
         }
     }
 }
