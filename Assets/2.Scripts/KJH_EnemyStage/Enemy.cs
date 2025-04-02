@@ -47,8 +47,19 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         //골드 지급로직
-       GameManager.Instance.playerData.AddGold(dropMoney);
-        Debug.Log($"적 처치! {dropMoney} 골드 획득. 현재 골드: {GameManager.Instance.playerData.gold}");
+        PlayerStats.Instance.playerData.AddGold(dropMoney);
+        Debug.Log($"적 처치! {dropMoney} 골드 획득. 현재 골드: {PlayerStats.Instance.playerData.gold}");
+
+        // 골드 UI 업데이트 추가
+        GoldManager goldManager = GameObject.FindObjectOfType<GoldManager>();
+        if (goldManager != null)
+        {
+            goldManager.UpdateGoldUI();
+        }
+        else
+        {
+            Debug.LogError("GoldManager를 찾을 수 없습니다 UI 업데이트 실패");
+        }
 
         stageManager.StageCount();  // 죽으면 스테이지 라운드 증가
         spawner.OnEnemyKilled();

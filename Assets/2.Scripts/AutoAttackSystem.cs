@@ -5,6 +5,7 @@ public class AutoAttackSystem : MonoBehaviour
 {
     public static AutoAttackSystem Instance;
 
+
     private bool isAutoAttacking = false;
 
     private void Awake()
@@ -70,12 +71,22 @@ public class AutoAttackSystem : MonoBehaviour
         if (PlayerStats.Instance != null)
         {
             PlayerStats.Instance.playerData.AddGold(gold);
-            UpgradeManager.Instance.UpdateGoldUI();
+            GoldManager goldManager = GameObject.FindObjectOfType<GoldManager>();
+            //UpgradeManager.Instance.UpdateGoldUI();
+            if (goldManager != null)
+            {
+                goldManager.UpdateGoldUI();
+            }
+            else
+            {
+                Debug.LogError("GoldManager를 찾을 수 없습니다! UI 업데이트 실패");
+            }
+
             Debug.Log($"자동 공격 {gold} 골드 획득! 현재 골드: {PlayerStats.Instance.playerData.gold}");
         }
         else
         {
-            Debug.LogError("PlayerStats.Instance가 null입니다. 씬에 PlayerStats 오브젝트가 있는지 확인하기.");
+            Debug.LogError("PlayerStats.Instance가 null. 씬에 PlayerStats 오브젝트가 있는지 확인하기.");
         }
     }
 }
