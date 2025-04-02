@@ -39,7 +39,6 @@ public class ClickToDamage : MonoBehaviour
         if (goldManager != null)
         {
             goldManager.GetGold(gold); // GoldManager∏¶ ≈Î«ÿ ∞ÒµÂ √ﬂ∞°
-            Debug.Log($"≈¨∏Ø¿∏∑Œ {gold} ∞ÒµÂ »πµÊ!");
         }
     }
 }
