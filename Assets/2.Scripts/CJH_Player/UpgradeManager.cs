@@ -74,7 +74,7 @@ public class UpgradeManager : MonoBehaviour
             return false;
         }
 
-        upgradeLevels[upgradeName]++;
+        upgradeLevels[upgradeName] += 1;
         float newStatValue = upgrade.GetUpgradeValue(upgradeLevels[upgradeName]);
 
         if (PlayerStats.Instance != null)

@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         if (criticalText != null) criticalText.text = $"Ä¡¸íÅ¸ È®·ü: {playerData.FinalCritChance()}%";
         if (criticalDmgText != null) criticalDmgText.text = $"Ä¡¸íÅ¸ µ¥¹ÌÁö: {playerData.FinalCritDamage()}x";
         if (autoAttackText != null) autoAttackText.text = $"ÀÚµ¿ °ø°Ý ¼Óµµ: {playerData.FinalAutoAttack()}x";
-        if (goldBonusText != null) goldBonusText.text = $"°ñµå È¹µæ·®: {playerData.FinalGoldBonus()}%";
+        if (goldBonusText != null) goldBonusText.text = $"°ñµå È¹µæ·®: {playerData.FinalGoldBonus()}";
     }
 
     public void ApplyUpgrade(string upgradeName, float newValue)
