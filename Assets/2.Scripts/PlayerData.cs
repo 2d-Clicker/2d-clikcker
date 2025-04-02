@@ -21,6 +21,13 @@ public class PlayerData
     public float equippedCritDamage = 0;
     public float equippedGoldBonus = 0;
 
+    // 아이템 구매 여부
+    public bool hasBoughtKnifeGamja = false;
+    public bool hasBoughtKnifeShort = false;
+    public bool hasBoughtKnifeBread = false;
+    public bool hasBoughtKnifeKitchen = false;
+    public bool hasBoughtKnifeChef = false;
+
     public float CalculateFinalDamage() //최종데미지
     {
         // 기본 데미지 계산
