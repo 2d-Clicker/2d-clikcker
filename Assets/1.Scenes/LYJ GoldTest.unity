@@ -1311,6 +1311,7 @@ MonoBehaviour:
   levelText: {fileID: 271550766}
   costText: {fileID: 271550767}
   upgradeButton: {fileID: 271550769}
+  goldManager: {fileID: 0}
 --- !u!1001 &193516246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,6 +2006,7 @@ MonoBehaviour:
   levelText: {fileID: 271550774}
   costText: {fileID: 271550775}
   upgradeButton: {fileID: 271550777}
+  goldManager: {fileID: 0}
 --- !u!1001 &278491808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,6 +2144,7 @@ MonoBehaviour:
   levelText: {fileID: 271550762}
   costText: {fileID: 271550763}
   upgradeButton: {fileID: 271550765}
+  goldManager: {fileID: 0}
 --- !u!1 &312312784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,8 +2180,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3499ffbe81e5aa4d9da2c3e81f87d40, type: 2}
   - {fileID: 11400000, guid: d0c906baa0811964ebe2c78249fb5a31, type: 2}
   - {fileID: 11400000, guid: a3b6c68206ab8a94285d8626321cc00b, type: 2}
-  playerGold: 100000
-  goldText: {fileID: 0}
 --- !u!4 &312312786
 Transform:
   m_ObjectHideFlags: 0
@@ -3365,6 +3366,7 @@ MonoBehaviour:
   levelText: {fileID: 271550770}
   costText: {fileID: 271550771}
   upgradeButton: {fileID: 271550773}
+  goldManager: {fileID: 0}
 --- !u!1001 &557806547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8651,6 +8653,7 @@ MonoBehaviour:
   levelText: {fileID: 271550758}
   costText: {fileID: 271550759}
   upgradeButton: {fileID: 271550761}
+  goldManager: {fileID: 0}
 --- !u!1 &1915005611
 GameObject:
   m_ObjectHideFlags: 0
