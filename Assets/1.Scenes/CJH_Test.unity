@@ -893,6 +893,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
   baseDamage: 10
   criticalChance: 5
   criticalDamage: 1
@@ -1573,7 +1578,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3412471422935751464, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 10.13
+      value: 10.130001
       objectReference: {fileID: 0}
     - target: {fileID: 4473669101951172731, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1727,7 +1732,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1361001718349882336, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
+    - {fileID: 7969156327547924657, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
+    - {fileID: 5281719880740905027, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
+    - {fileID: 1578754818070750816, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
+    - {fileID: 4354436915541898896, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3119,6 +3129,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
 --- !u!4 &457967336
 Transform:
   m_ObjectHideFlags: 0

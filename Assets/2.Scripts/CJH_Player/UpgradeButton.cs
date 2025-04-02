@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,25 +8,32 @@ public class UpgradeButton : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI costText;
     public Button upgradeButton;
-
     public GoldManager goldManager;
+
+    private int lastGold = -1; 
 
     void Start()
     {
         goldManager = FindObjectOfType<GoldManager>();
-        if(goldManager == null)
+        if (goldManager == null)
         {
-            Debug.LogError("GoldManager를 찾을수없습니다.");
+            Debug.LogError("GoldManager를 찾을 수 없습니다.");
             return;
         }
+
         UpdateUI();
         upgradeButton.onClick.AddListener(OnUpgradeClick);
     }
-    private void Update()
+
+    void Update()
     {
-        
-      UpdateUI();
-        
+        int currentGold = goldManager.GetCurrentGold();
+
+        if (currentGold != lastGold)
+        {
+            lastGold = currentGold;
+            UpdateUI();
+        }
     }
 
     void UpdateUI()
@@ -35,14 +41,31 @@ public class UpgradeButton : MonoBehaviour
         int level = UpgradeManager.Instance.GetUpgradeLevel(upgradeName);
         UpgradeData upgrade = UpgradeManager.Instance.upgradeList.Find(u => u.upgradeName == upgradeName);
 
+        if (upgrade == null)
+        {
+            Debug.LogError($"업그레이드 데이터를 찾을 수 없습니다: {upgradeName}");
+            return;
+        }
+
         int upgradeCost = upgrade.GetUpgradeCost(level);
-        int playerGold = goldManager != null ? goldManager.GetCurrentGold() : 0;
+        int playerGold = goldManager.GetCurrentGold();
 
         levelText.text = $"{level}";
-        costText.text = upgradeCost.ToString();
 
-        costText.color = (playerGold >= upgradeCost) ? Color.black : Color.red;
-        upgradeButton.interactable = playerGold >= upgradeCost;
+        bool isMaxLevel = level >= upgrade.maxLevel;
+
+        if (isMaxLevel)
+        {
+            costText.text = "";  
+            costText.color = Color.gray;  
+            upgradeButton.interactable = false; 
+        }
+        else
+        {
+            costText.text = upgradeCost.ToString();
+            costText.color = (playerGold >= upgradeCost) ? Color.black : Color.red;
+            upgradeButton.interactable = playerGold >= upgradeCost;
+        }
     }
 
     void OnUpgradeClick()
@@ -54,9 +77,7 @@ public class UpgradeButton : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"ㄴㄴ 안됌");
+            Debug.LogWarning("업그레이드 실패");
         }
     }
-
-   
 }
