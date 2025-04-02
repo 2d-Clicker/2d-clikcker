@@ -3,6 +3,8 @@ using UnityEngine;
 public class HandleAttack : MonoBehaviour
 {
     public ParticleSystem clickParticle;
+    public AudioClip clickAudio;
+    [Range(0f, 1f)] public float clickAudioVolume = 0.5f;
 
     public void OnAttack()
     {
@@ -14,6 +16,11 @@ public class HandleAttack : MonoBehaviour
 
             float lifetime = particle.main.startLifetime.constant;
             Destroy(particle.gameObject, lifetime);
+        }
+
+        if (clickAudio != null)
+        {
+            AudioSource.PlayClipAtPoint(clickAudio, Camera.main.transform.position, clickAudioVolume);
         }
     }
 }

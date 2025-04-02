@@ -963,6 +963,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 7761092082285472693}
   newWeaponNameText: {fileID: 7314428285263919066}
   newWeaponStatsText: {fileID: 735780257341348458}
+  goldManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!1 &3723058337938222215
 GameObject:
@@ -1103,6 +1104,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 677347175676780326}
   newWeaponNameText: {fileID: 3270490774626810208}
   newWeaponStatsText: {fileID: 7139224111840720448}
+  goldManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!1 &4484534153423708837
 GameObject:
@@ -1281,6 +1283,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 2595042121487860160}
   newWeaponNameText: {fileID: 3073631416640285068}
   newWeaponStatsText: {fileID: 17756666352926357}
+  goldManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!1 &5655740349755437713
 GameObject:
@@ -1518,6 +1521,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 8836833579584220019}
   newWeaponNameText: {fileID: 5934417535285482130}
   newWeaponStatsText: {fileID: 6397073616109505556}
+  goldManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!1 &6068491261172533664
 GameObject:
@@ -2723,6 +2727,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 6814305313216893141}
   newWeaponNameText: {fileID: 8172363894903668087}
   newWeaponStatsText: {fileID: 8656553571244573117}
+  goldManager: {fileID: 0}
   inventory: {fileID: 0}
 --- !u!1 &9030343967356302258
 GameObject:

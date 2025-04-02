@@ -9,9 +9,19 @@ public class SettingMenu : MonoBehaviour
     public Slider bgmSlider;       // 볼륨 조절 슬라이더
     public string homeSceneName = "StartScene"; // 홈 씬 이름
     public Button homeButton;      // 홈 버튼
+    public Button settingBtn;
+    public GameObject clickArea;
+
+    public GameObject InSettingPanel;
+    public Button ExitBtn;
 
     void Start()
     {
+        if (InSettingPanel != null)
+        {
+            InSettingPanel.SetActive(false);
+        }
+
         // 저장된 볼륨 불러오기
         float savedVolume = PlayerPrefs.GetFloat("BGMVolume", 0.8f);
         bgmSlider.value = savedVolume;
@@ -30,6 +40,46 @@ public class SettingMenu : MonoBehaviour
         else
         {
             Debug.LogWarning("Home 버튼이 설정되지 않았음 Inspector에서 연결해.");
+        }
+
+        if (settingBtn != null)
+        {
+            settingBtn.onClick.RemoveAllListeners();
+            settingBtn.onClick.AddListener(ToggleSettingPanel);
+        }
+
+        if (ExitBtn != null) //Exit 버튼
+        {
+            ExitBtn.onClick.RemoveAllListeners();
+            ExitBtn.onClick.AddListener(ToggleSettingPanel);
+        }
+        else
+        {
+            Debug.LogWarning("ExitBtn이 설정되지 않음 Inspector에서 연결하기.");
+        }
+    }
+    
+    private void ToggleSettingPanel()
+    {
+        if (InSettingPanel != null)
+        {
+            bool isPanelActive = InSettingPanel.activeSelf;
+            InSettingPanel.SetActive(!InSettingPanel.activeSelf);
+
+            if(clickArea != null)
+            {
+                clickArea.SetActive(isPanelActive);
+            }
+
+            // 게임 재개
+            if (isPanelActive) 
+            {
+                Time.timeScale = 1f; 
+            }
+            else //게임 일시정지
+            {
+                Time.timeScale = 0f; 
+            }
         }
     }
 
@@ -62,6 +112,6 @@ public class SettingMenu : MonoBehaviour
             Debug.LogWarning("AudioManager 인스턴스가 존재하지 않음");
         }
 
-            SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
     }
 }
