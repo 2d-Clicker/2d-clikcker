@@ -60,8 +60,10 @@ public class PlayerData
         if (gold >= amount)
         {
             gold -= amount;
+            Debug.Log($"골드 사용: {amount} | 남은 골드: {gold}");
             return true;
         }
+        Debug.Log("골드 부족! 구매 불가.");
         return false;
     }
 
