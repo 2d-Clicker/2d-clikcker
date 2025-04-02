@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using TMPro; // 골드 UI 표시를 위한 추가
 
 public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance;
 
     public List<UpgradeData> upgradeList;  // 업그레이드 데이터 리스트
-    public int playerGold = 100;  // 현재 보유 골드 (테스트용 기본값)
-
-    public TextMeshProUGUI goldText;  // 현재 골드를 표시할 UI (Inspector에서 연결)
+    private GoldManager goldManager;
 
     private Dictionary<string, int> upgradeLevels = new Dictionary<string, int>();
 
@@ -33,14 +30,20 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        UpdateGoldUI(); // 게임 시작 시 UI 초기화
+        goldManager = FindObjectOfType<GoldManager>();  // GoldManager 찾기
+        if (goldManager == null)
+        {
+            Debug.LogError("GoldManager를 찾을 수 없습니다! 골드 UI 업데이트 불가");
+        }
+
+        UpdateGoldUI();
     }
 
     public void UpdateGoldUI()
     {
-        if (goldText != null)
+        if (goldManager != null)
         {
-            goldText.text = $"{playerGold}";
+            goldManager.UpdateGoldUI();
         }
     }
 
@@ -61,13 +64,16 @@ public class UpgradeManager : MonoBehaviour
         }
 
         int upgradeCost = upgrade.GetUpgradeCost(currentLevel);
-        if (playerGold < upgradeCost)
+        if (goldManager == null || !goldManager.SpendGold(upgradeCost))
         {
             Debug.Log("골드 부족");
+            if (goldManager != null)
+            {
+                goldManager.ShowPopup();
+            }
             return false;
         }
 
-        playerGold -= upgradeCost;
         upgradeLevels[upgradeName]++;
         float newStatValue = upgrade.GetUpgradeValue(upgradeLevels[upgradeName]);
 

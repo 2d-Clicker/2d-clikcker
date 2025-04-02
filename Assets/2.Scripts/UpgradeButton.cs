@@ -10,9 +10,16 @@ public class UpgradeButton : MonoBehaviour
     public TextMeshProUGUI costText;
     public Button upgradeButton;
 
+    public GoldManager goldManager;
 
     void Start()
     {
+        goldManager = FindObjectOfType<GoldManager>();
+        if(goldManager == null)
+        {
+            Debug.LogError("GoldManager를 찾을수없습니다.");
+            return;
+        }
         UpdateUI();
         upgradeButton.onClick.AddListener(OnUpgradeClick);
     }
@@ -23,7 +30,7 @@ public class UpgradeButton : MonoBehaviour
         UpgradeData upgrade = UpgradeManager.Instance.upgradeList.Find(u => u.upgradeName == upgradeName);
 
         int upgradeCost = upgrade.GetUpgradeCost(level);
-        int playerGold = UpgradeManager.Instance.playerGold;
+        int playerGold = goldManager != null ? goldManager.GetCurrentGold() : 0;
 
         levelText.text = $"{level}";
         costText.text = upgradeCost.ToString();

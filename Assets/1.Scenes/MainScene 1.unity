@@ -718,6 +718,7 @@ MonoBehaviour:
   levelText: {fileID: 271550766}
   costText: {fileID: 271550767}
   upgradeButton: {fileID: 271550769}
+  goldManager: {fileID: 0}
 --- !u!114 &271123914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,6 +1200,7 @@ MonoBehaviour:
   levelText: {fileID: 271550774}
   costText: {fileID: 271550775}
   upgradeButton: {fileID: 271550777}
+  goldManager: {fileID: 0}
 --- !u!114 &291192980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,6 +1217,7 @@ MonoBehaviour:
   levelText: {fileID: 271550762}
   costText: {fileID: 271550763}
   upgradeButton: {fileID: 271550765}
+  goldManager: {fileID: 0}
 --- !u!1 &312312784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,8 +1253,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3499ffbe81e5aa4d9da2c3e81f87d40, type: 2}
   - {fileID: 11400000, guid: d0c906baa0811964ebe2c78249fb5a31, type: 2}
   - {fileID: 11400000, guid: a3b6c68206ab8a94285d8626321cc00b, type: 2}
-  playerGold: 100000
-  goldText: {fileID: 0}
 --- !u!4 &312312786
 Transform:
   m_ObjectHideFlags: 0
@@ -1860,6 +1861,7 @@ MonoBehaviour:
   levelText: {fileID: 271550770}
   costText: {fileID: 271550771}
   upgradeButton: {fileID: 271550773}
+  goldManager: {fileID: 0}
 --- !u!114 &577626570 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5843369176856876882, guid: 083be9632d209a24187b6b3ad277606f, type: 3}
@@ -5127,6 +5129,7 @@ MonoBehaviour:
   levelText: {fileID: 271550758}
   costText: {fileID: 271550759}
   upgradeButton: {fileID: 271550761}
+  goldManager: {fileID: 0}
 --- !u!1 &1908574184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8703639550002217046, guid: ab2e8e93efb091745a2e0cd3d7b68ef2, type: 3}
