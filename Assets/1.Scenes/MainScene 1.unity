@@ -772,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3412471422935751464, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -79.8
+      value: -79.799995
       objectReference: {fileID: 0}
     - target: {fileID: 3412471422935751464, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -932,11 +932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954303060719871527, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 9.18
+      value: -29.059998
       objectReference: {fileID: 0}
     - target: {fileID: 8954303060719871527, guid: 587ec8ced6bb75f4d9d9d2ff7d0cdc79, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.59
+      value: -14.530003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2589,6 +2589,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnEquipButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 3103974499664576521, guid: ab2e8e93efb091745a2e0cd3d7b68ef2, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 105059802}
     - target: {fileID: 3245825846950040992, guid: ab2e8e93efb091745a2e0cd3d7b68ef2, type: 3}
       propertyPath: weaponManager
       value: 

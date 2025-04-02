@@ -7,7 +7,6 @@ public class ShopButton : MonoBehaviour
 {
     public ShopManager shopManager;
     public string itemKey;  // 구매할 아이템의 키
-    private int itemPrice; // 아이템 가격
 
     void Start()
     {
