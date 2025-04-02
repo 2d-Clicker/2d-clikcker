@@ -64,6 +64,12 @@ public class WeaponManager : MonoBehaviour
     // 장착할 무기 선택
     public void EquipWeapon(WeaponStats newWeaponStats)
     {
+        // 이미 구매한 아이템인지 체크
+        if (IsWeaponAlreadyBought(newWeaponStats.weaponName))
+        {
+            Debug.Log("이미 이 무기를 구매했습니다.");
+            return;
+        }
         // 새로운 무기를 장착할 때, 기존의 능력치에 누적된 강화 상태를 유지
         if (currentWeaponStats != null && currentWeaponStats.weaponName == newWeaponStats.weaponName)
         {
@@ -77,32 +83,33 @@ public class WeaponManager : MonoBehaviour
             currentUpgradeLevel = 0; // 강화 상태 초기화
         }
 
-        // 모든 패널 비활성화
+        // 기존에 장착된 무기 비활성화
         DeactivateAllPanels();
 
-        // 선택된 무기에 맞는 패널만 활성화
-        if (currentWeaponStats.weaponName == "감자칼")
+        // 새로운 무기 장착
+        if (newWeaponStats.weaponName == "감자칼")
         {
             knifeGamja.SetActive(true);
         }
-        else if (currentWeaponStats.weaponName == "짧은칼")
+        else if (newWeaponStats.weaponName == "짧은칼")
         {
             knifeShort.SetActive(true);
         }
-        else if (currentWeaponStats.weaponName == "빵 칼")
+        else if (newWeaponStats.weaponName == "빵 칼")
         {
             knifeBread.SetActive(true);
         }
-        else if (currentWeaponStats.weaponName == "식 칼")
+        else if (newWeaponStats.weaponName == "식 칼")
         {
             knifeKitchen.SetActive(true);
         }
-        else if (currentWeaponStats.weaponName == "중식도")
+        else if (newWeaponStats.weaponName == "중식도")
         {
             knifeChef.SetActive(true);
         }
 
         UpdateWeaponUI(); // UI 업데이트
+        MarkWeaponAsBought(newWeaponStats.weaponName);// 무기 구매 여부 업데이트
     }
 
     public void UpgradeWeapon(string weaponName)
@@ -200,5 +207,46 @@ public class WeaponManager : MonoBehaviour
         knifeBread.SetActive(false);
         knifeKitchen.SetActive(false);
         knifeChef.SetActive(false);
+    }
+
+    private bool IsWeaponAlreadyBought(string weaponName)
+    {
+        switch (weaponName)
+        {
+            case "감자칼":
+                return PlayerStats.Instance.playerData.hasBoughtKnifeGamja;
+            case "짧은칼":
+                return PlayerStats.Instance.playerData.hasBoughtKnifeShort;
+            case "빵 칼":
+                return PlayerStats.Instance.playerData.hasBoughtKnifeBread;
+            case "식 칼":
+                return PlayerStats.Instance.playerData.hasBoughtKnifeKitchen;
+            case "중식도":
+                return PlayerStats.Instance.playerData.hasBoughtKnifeChef;
+            default:
+                return false;
+        }
+    }
+
+    private void MarkWeaponAsBought(string weaponName)
+    {
+        switch (weaponName)
+        {
+            case "감자칼":
+                PlayerStats.Instance.playerData.hasBoughtKnifeGamja = true;
+                break;
+            case "짧은칼":
+                PlayerStats.Instance.playerData.hasBoughtKnifeShort = true;
+                break;
+            case "빵 칼":
+                PlayerStats.Instance.playerData.hasBoughtKnifeBread = true;
+                break;
+            case "식 칼":
+                PlayerStats.Instance.playerData.hasBoughtKnifeKitchen = true;
+                break;
+            case "중식도":
+                PlayerStats.Instance.playerData.hasBoughtKnifeChef = true;
+                break;
+        }
     }
 }
