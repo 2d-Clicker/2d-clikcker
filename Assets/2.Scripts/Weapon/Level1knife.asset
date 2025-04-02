@@ -20,13 +20,13 @@ MonoBehaviour:
   statUpgrades:
   - upgradeLevel: 1
     damageIncrease: 2
-    speedIncrease: 1.1
-    critChanceIncrease: 0.07
+    speedIncrease: 0.1
+    critChanceIncrease: 0.01
     critDamageIncrease: 0.15
   - upgradeLevel: 2
     damageIncrease: 3
-    speedIncrease: 1.2
-    critChanceIncrease: 0.09
+    speedIncrease: 0.2
+    critChanceIncrease: 0.02
     critDamageIncrease: 0.17
   itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
   itemDescription: "\uAC10\uC790\uB098~ \uACFC\uC77C\uC774\uB098~"
