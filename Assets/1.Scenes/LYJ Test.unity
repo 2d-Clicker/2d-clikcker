@@ -536,6 +536,10 @@ MonoBehaviour:
   bgmSlider: {fileID: 1582453712}
   homeSceneName: StartScene
   homeButton: {fileID: 1582453711}
+  settingBtn: {fileID: 0}
+  clickArea: {fileID: 0}
+  InSettingPanel: {fileID: 0}
+  ExitBtn: {fileID: 0}
 --- !u!1 &397877358
 GameObject:
   m_ObjectHideFlags: 0
