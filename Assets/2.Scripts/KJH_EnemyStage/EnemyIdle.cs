@@ -14,7 +14,7 @@ public class EnemyIdle : MonoBehaviour
         Vector3 originalScale = transform.localScale;
         Vector3 targetScale = originalScale * 1.05f;
 
-        float duration = 0.5f;
+        float duration = 0.5f; //사이즈의 변경까지 걸리는 시간 
 
         while (true)
         {

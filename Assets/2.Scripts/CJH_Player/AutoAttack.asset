@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeName: "\uC790\uB3D9\uACF5\uACA9"
   maxLevel: 10
   baseValue: 10
-  increasePerLevel: 2
+  increasePerLevel: 1
   baseCost: 100
   costMultiplier: 1.5
