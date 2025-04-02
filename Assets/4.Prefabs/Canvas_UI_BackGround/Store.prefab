@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6827289072546457801}
   - component: {fileID: 5418415885924752840}
   - component: {fileID: 7513092446015553511}
+  - component: {fileID: 9196613552332879285}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -120,7 +121,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8518098098825881858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4678003082628617315}
+        m_TargetAssemblyTypeName: StoreManager, Assembly-CSharp
+        m_MethodName: BuyKnife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9196613552332879285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53621103221868723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78f35056aee89041817002df0e3a1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopManager: {fileID: 6238709980690536201}
+  itemKey: KnifeBread
 --- !u!1 &239957088804239831
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +160,7 @@ GameObject:
   - component: {fileID: 7089937132765905944}
   - component: {fileID: 3797862163753194691}
   - component: {fileID: 6802411369798088457}
+  - component: {fileID: 4832877252584202636}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -241,7 +269,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 445043848213017363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4678003082628617315}
+        m_TargetAssemblyTypeName: StoreManager, Assembly-CSharp
+        m_MethodName: BuyKnife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4832877252584202636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239957088804239831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78f35056aee89041817002df0e3a1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopManager: {fileID: 6238709980690536201}
+  itemKey: KnifeGamja
 --- !u!1 &288376210234029697
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +383,7 @@ GameObject:
   - component: {fileID: 644750926496571176}
   - component: {fileID: 8936976144317897920}
   - component: {fileID: 2033295785044671695}
+  - component: {fileID: 2302901206569092762}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -437,7 +492,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4810935972660418284}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4678003082628617315}
+        m_TargetAssemblyTypeName: StoreManager, Assembly-CSharp
+        m_MethodName: BuyKnife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2302901206569092762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343650073486188938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78f35056aee89041817002df0e3a1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopManager: {fileID: 6238709980690536201}
+  itemKey: KnifeShort
 --- !u!1 &615458140348228986
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +556,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 80, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4379841647574454227
 CanvasRenderer:
@@ -566,7 +647,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 80, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6571305630755759977
 CanvasRenderer:
@@ -730,10 +811,10 @@ RectTransform:
   - {fileID: 5311394497986663472}
   m_Father: {fileID: 1429626035213548337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -196}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3718477059750840639
 CanvasRenderer:
@@ -2026,7 +2107,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 80, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1494592101178849090
 CanvasRenderer:
@@ -2251,7 +2332,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 80, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7883363218321721062
 CanvasRenderer:
@@ -2557,7 +2638,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.0009765625}
-  m_SizeDelta: {x: 0, y: 128}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &4715482790452281887
 MonoBehaviour:
@@ -2991,6 +3072,8 @@ GameObject:
   - component: {fileID: 5671737674064449822}
   - component: {fileID: 1360588283339005379}
   - component: {fileID: 4596185404293025664}
+  - component: {fileID: 4678003082628617315}
+  - component: {fileID: 6238709980690536201}
   m_Layer: 5
   m_Name: Store
   m_TagString: Untagged
@@ -3005,7 +3088,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4671286217616607548}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3086,6 +3169,40 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4678003082628617315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671286217616607548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b396bf05d19d34189709a3ed29c7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldManager: {fileID: 0}
+  playerInventory: {fileID: 0}
+  itemCost: 0
+--- !u!114 &6238709980690536201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4671286217616607548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc25998272e23774ebe87387bb12d0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifeGamja: {fileID: 0}
+  knifeShort: {fileID: 0}
+  knifeBread: {fileID: 0}
+  knifeKitchen: {fileID: 0}
+  knifeChef: {fileID: 0}
+  goldManager: {fileID: 0}
+  toolManager: {fileID: 0}
 --- !u!1 &4671882771828063260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3694,10 +3811,10 @@ RectTransform:
   - {fileID: 5654870019414609653}
   m_Father: {fileID: 1429626035213548337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -392}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7656440018573472213
 CanvasRenderer:
@@ -3920,6 +4037,7 @@ GameObject:
   - component: {fileID: 7023505894674601727}
   - component: {fileID: 8193995645066150621}
   - component: {fileID: 473656836675173537}
+  - component: {fileID: 6988924372724581731}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -4028,7 +4146,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5150757171774376700}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4671286217616607548}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6988924372724581731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5253271668961721068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78f35056aee89041817002df0e3a1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopManager: {fileID: 6238709980690536201}
+  itemKey: KnifeKitchen
 --- !u!1 &5375793099301020833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,10 +4208,10 @@ RectTransform:
   - {fileID: 8239918453833450059}
   m_Father: {fileID: 1429626035213548337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: 0}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &786926372559070413
 CanvasRenderer:
@@ -4278,7 +4422,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: 80, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &2378060082086260474
 CanvasRenderer:
@@ -4571,6 +4715,7 @@ GameObject:
   - component: {fileID: 6058621072657216039}
   - component: {fileID: 2241148616100744378}
   - component: {fileID: 4553689135057126703}
+  - component: {fileID: 6842045811913963420}
   m_Layer: 5
   m_Name: BuyBtn
   m_TagString: Untagged
@@ -4679,7 +4824,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6083788251953495866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4678003082628617315}
+        m_TargetAssemblyTypeName: StoreManager, Assembly-CSharp
+        m_MethodName: BuyKnife
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6842045811913963420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583464060558026303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78f35056aee89041817002df0e3a1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopManager: {fileID: 6238709980690536201}
+  itemKey: KnifeChef
 --- !u!1 &7014488381997046808
 GameObject:
   m_ObjectHideFlags: 0
@@ -4793,10 +4964,10 @@ RectTransform:
   - {fileID: 3485592246081484972}
   m_Father: {fileID: 1429626035213548337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -98}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &250444562812102213
 CanvasRenderer:
@@ -4976,7 +5147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-'
+  m_text: "\uB3D9\uAE00\uB3D9\uAE00 \uC655\uAC10\uC790~"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e04440969915f144e9cad38ebefcf61c, type: 2}
   m_sharedMaterial: {fileID: 2613795931342172932, guid: e04440969915f144e9cad38ebefcf61c, type: 2}
@@ -5289,10 +5460,10 @@ RectTransform:
   - {fileID: 5090148976860604172}
   m_Father: {fileID: 1429626035213548337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -294}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3404567572677869692
 CanvasRenderer:
