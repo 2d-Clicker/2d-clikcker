@@ -22,11 +22,6 @@ public class SettingMenu : MonoBehaviour
             InSettingPanel.SetActive(false);
         }
 
-        if(clickArea != null)
-        {
-            clickArea.SetActive(false);
-        }
-
         // 저장된 볼륨 불러오기
         float savedVolume = PlayerPrefs.GetFloat("BGMVolume", 0.8f);
         bgmSlider.value = savedVolume;
