@@ -47,6 +47,16 @@ public class SettingMenu : MonoBehaviour
             settingBtn.onClick.RemoveAllListeners();
             settingBtn.onClick.AddListener(ToggleSettingPanel);
         }
+
+        if (ExitBtn != null) //Exit 버튼
+        {
+            ExitBtn.onClick.RemoveAllListeners();
+            ExitBtn.onClick.AddListener(ToggleSettingPanel);
+        }
+        else
+        {
+            Debug.LogWarning("ExitBtn이 설정되지 않음 Inspector에서 연결하기.");
+        }
     }
     
     private void ToggleSettingPanel()
