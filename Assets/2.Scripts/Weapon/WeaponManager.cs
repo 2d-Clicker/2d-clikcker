@@ -36,8 +36,6 @@ public class WeaponManager : MonoBehaviour
         InitializeWeapon(); // 게임 시작 시 무기 초기화
         UpdateWeaponUI(); // UI 업데이트
         UpdateNewWeaponUI(); 
-        
-       
 
         InitializeWeaponUpgradeCosts();  // 무기별 강화 금액 초기화
     }
@@ -70,10 +68,11 @@ public class WeaponManager : MonoBehaviour
             Debug.Log("이미 이 무기를 구매했습니다.");
             return;
         }
-        // 새로운 무기를 장착할 때, 기존의 능력치에 누적된 강화 상태를 유지
+
+        // 무기 장착
         if (currentWeaponStats != null && currentWeaponStats.weaponName == newWeaponStats.weaponName)
         {
-            // 이미 장착된 무기라면, 강화 레벨 유지
+            // 기존 장착된 무기라면, 강화 레벨 유지
             currentWeaponStats = newWeaponStats;
         }
         else
@@ -82,6 +81,9 @@ public class WeaponManager : MonoBehaviour
             currentWeaponStats = newWeaponStats;
             currentUpgradeLevel = 0; // 강화 상태 초기화
         }
+
+        // 플레이어 스텟 업데이트
+        PlayerStats.Instance.playerData.EquipWeapon(currentWeaponStats);
 
         // 기존에 장착된 무기 비활성화
         DeactivateAllPanels();

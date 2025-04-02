@@ -590,6 +590,7 @@ MonoBehaviour:
   levelText: {fileID: 1117495}
   costText: {fileID: 1117496}
   upgradeButton: {fileID: 1117498}
+  goldManager: {fileID: 0}
 --- !u!114 &16607728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,6 +1907,7 @@ MonoBehaviour:
   levelText: {fileID: 1117483}
   costText: {fileID: 1117484}
   upgradeButton: {fileID: 1117486}
+  goldManager: {fileID: 0}
 --- !u!1 &613520884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2510,7 @@ MonoBehaviour:
   levelText: {fileID: 1117487}
   costText: {fileID: 1117488}
   upgradeButton: {fileID: 1117490}
+  goldManager: {fileID: 0}
 --- !u!1 &1317078070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3330,70 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3799404544129169651, guid: 090e81827b6470a4588b6ee32bf0427a, type: 3}
   m_PrefabInstance: {fileID: 1350739109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1430077823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430077825}
+  - component: {fileID: 1430077824}
+  m_Layer: 0
+  m_Name: WeaponEquipManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1430077824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430077823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f87b57df7018348b93a9f345be35b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    currentStage: 1
+    gold: 0
+    baseDamage: 10
+    criticalChance: 5
+    criticalDamage: 1
+    autoAttackSpeed: 1
+    goldBonus: 1
+    attackUpgradeLevel: 0
+    goldBonusUpgradeLevel: 0
+    equippedWeaponAttack: 0
+    equippedCritChance: 0
+    equippedCritDamage: 0
+    equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
+  equippedWeaponStats: {fileID: 0}
+--- !u!4 &1430077825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430077823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38046744, y: -2.9906635, z: 367.67517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480171780
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,8 +3735,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3499ffbe81e5aa4d9da2c3e81f87d40, type: 2}
   - {fileID: 11400000, guid: d0c906baa0811964ebe2c78249fb5a31, type: 2}
   - {fileID: 11400000, guid: a3b6c68206ab8a94285d8626321cc00b, type: 2}
-  playerGold: 100000
-  goldText: {fileID: 0}
 --- !u!4 &1605664726
 Transform:
   m_ObjectHideFlags: 0
@@ -3701,6 +3766,7 @@ MonoBehaviour:
   levelText: {fileID: 1117491}
   costText: {fileID: 1117492}
   upgradeButton: {fileID: 1117494}
+  goldManager: {fileID: 0}
 --- !u!1 &1685059218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +4031,7 @@ MonoBehaviour:
   levelText: {fileID: 1117479}
   costText: {fileID: 1117480}
   upgradeButton: {fileID: 1117482}
+  goldManager: {fileID: 0}
 --- !u!114 &1840572223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5728,6 +5795,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
 --- !u!4 &2082261768
 Transform:
   m_ObjectHideFlags: 0
@@ -5786,6 +5858,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
   baseDamage: 10
   criticalChance: 5
   criticalDamage: 1
@@ -5824,3 +5901,4 @@ SceneRoots:
   - {fileID: 1605664726}
   - {fileID: 1105619376}
   - {fileID: 2118655221}
+  - {fileID: 1430077825}
