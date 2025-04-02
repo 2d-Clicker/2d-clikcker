@@ -17,11 +17,11 @@ public class Enemy : MonoBehaviour
 
     public void Initialize()
     {
-        // 체력 = baseHP × 현재 스테이지
+        // 체력 = baseHP × 현재 스테이지 *4 +  baseHP x 현재 라운드
         maxHP = enemyData.baseHP * stageManager.currentStage *4  + enemyData.baseHP* stageManager.currentround;
         currentHP = maxHP;
 
-        //골드 보상
+        //골드 보상 드랍골드x 현재 스테이지 * 3 
         dropMoney = enemyData.dropGold * stageManager.currentStage*3; 
         UpdateHPBar();
     }
