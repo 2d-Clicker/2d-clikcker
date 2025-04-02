@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 91884930}
   - component: {fileID: 91884929}
   m_Layer: 0
-  m_Name: PlayerStats (1)
+  m_Name: PlayerStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,6 +893,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
   baseDamage: 10
   criticalChance: 5
   criticalDamage: 1
@@ -1006,7 +1011,7 @@ GameObject:
   - component: {fileID: 97673902}
   - component: {fileID: 97673901}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1311,6 +1316,7 @@ MonoBehaviour:
   levelText: {fileID: 271550766}
   costText: {fileID: 271550767}
   upgradeButton: {fileID: 271550769}
+  goldManager: {fileID: 0}
 --- !u!1001 &193516246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2005,6 +2011,7 @@ MonoBehaviour:
   levelText: {fileID: 271550774}
   costText: {fileID: 271550775}
   upgradeButton: {fileID: 271550777}
+  goldManager: {fileID: 0}
 --- !u!1001 &278491808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,6 +2149,7 @@ MonoBehaviour:
   levelText: {fileID: 271550762}
   costText: {fileID: 271550763}
   upgradeButton: {fileID: 271550765}
+  goldManager: {fileID: 0}
 --- !u!1 &312312784
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2161,7 @@ GameObject:
   - component: {fileID: 312312786}
   - component: {fileID: 312312785}
   m_Layer: 0
-  m_Name: UpgradeManager (1)
+  m_Name: UpgradeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2177,8 +2185,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c3499ffbe81e5aa4d9da2c3e81f87d40, type: 2}
   - {fileID: 11400000, guid: d0c906baa0811964ebe2c78249fb5a31, type: 2}
   - {fileID: 11400000, guid: a3b6c68206ab8a94285d8626321cc00b, type: 2}
-  playerGold: 100000
-  goldText: {fileID: 0}
 --- !u!4 &312312786
 Transform:
   m_ObjectHideFlags: 0
@@ -3030,7 +3036,7 @@ GameObject:
   - component: {fileID: 454768131}
   - component: {fileID: 454768130}
   m_Layer: 0
-  m_Name: AutoAttackManager (1)
+  m_Name: 'AutoAttackManager '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3106,6 +3112,11 @@ MonoBehaviour:
     equippedCritChance: 0
     equippedCritDamage: 0
     equippedGoldBonus: 0
+    hasBoughtKnifeGamja: 0
+    hasBoughtKnifeShort: 0
+    hasBoughtKnifeBread: 0
+    hasBoughtKnifeKitchen: 0
+    hasBoughtKnifeChef: 0
 --- !u!4 &457967336
 Transform:
   m_ObjectHideFlags: 0
@@ -3365,6 +3376,7 @@ MonoBehaviour:
   levelText: {fileID: 271550770}
   costText: {fileID: 271550771}
   upgradeButton: {fileID: 271550773}
+  goldManager: {fileID: 0}
 --- !u!1001 &557806547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5801,7 +5813,7 @@ GameObject:
   - component: {fileID: 1195114359}
   - component: {fileID: 1195114358}
   m_Layer: 5
-  m_Name: Canvas (2)
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5883,7 +5895,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 97673902}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -8651,6 +8663,7 @@ MonoBehaviour:
   levelText: {fileID: 271550758}
   costText: {fileID: 271550759}
   upgradeButton: {fileID: 271550761}
+  goldManager: {fileID: 0}
 --- !u!1 &1915005611
 GameObject:
   m_ObjectHideFlags: 0
