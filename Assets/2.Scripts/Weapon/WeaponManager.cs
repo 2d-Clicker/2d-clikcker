@@ -26,7 +26,7 @@ public class WeaponManager : MonoBehaviour
     public GoldManager goldManager; // goldManager 참조
     public Inventory inventory; // inventory 참조
     private Weapon equippedWeapon; // 장착된 무기
-    private WeaponStats currentWeaponStats; // 현재 장착된 무기 정보
+    [SerializeField]private WeaponStats currentWeaponStats; // 현재 장착된 무기 정보
 
     // 강화 금액 설정
     private Dictionary<string, int> weaponUpgradeCosts = new Dictionary<string, int>();
@@ -82,7 +82,7 @@ public class WeaponManager : MonoBehaviour
         {
             // 새로운 무기라면, 강화 레벨 초기화
             currentWeaponStats = newWeaponStats;
-            currentUpgradeLevel = 0; // 강화 상태 초기화
+            // currentUpgradeLevel = 0; // 강화 상태 초기화
         }
 
         // 플레이어 스텟 업데이트
@@ -165,7 +165,7 @@ public class WeaponManager : MonoBehaviour
             // 장착된 무기 UI 업데이트: 레벨, 공격력, 치명타 확률
             newWeaponNameText.text = currentWeaponStats.weaponName + " (Lv." + currentUpgradeLevel + ")";
             newWeaponStatsText.text = "공격력: " + currentWeaponStats.baseDamage + "\n\n" +
-                                      "치명타 확률: " + (currentWeaponStats.baseCritChance * 1) + "%";
+                                      "치명타 확률: " + (currentWeaponStats.baseCritChance * 100) + "%";
 
             // 장착된 무기 아이콘 업데이트
             if (currentWeaponStats.itemIcon != null)

@@ -4863,6 +4863,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnEquipButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 3103974499664576521, guid: ab2e8e93efb091745a2e0cd3d7b68ef2, type: 3}
+      propertyPath: weaponManager
+      value: 
+      objectReference: {fileID: 1350739122}
     - target: {fileID: 3245825846950040992, guid: ab2e8e93efb091745a2e0cd3d7b68ef2, type: 3}
       propertyPath: weaponManager
       value: 
