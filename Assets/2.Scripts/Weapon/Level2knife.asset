@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: "\uC9E7\uC740\uCE7C"
   baseDamage: 20
-  baseSpeed: 1.2
-  baseCritChance: 0.05
-  baseCritDamage: 0.15
+  baseSpeed: 3.2
+  baseCritChance: 0.120000005
+  baseCritDamage: 0.34
   statUpgrades:
   - upgradeLevel: 1
     damageIncrease: 40

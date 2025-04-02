@@ -15,18 +15,18 @@ MonoBehaviour:
   weaponName: "\uAC10\uC790\uCE7C"
   baseDamage: 1
   baseSpeed: 1
-  baseCritChance: 0.05
+  baseCritChance: 0.01
   baseCritDamage: 0.1
   statUpgrades:
   - upgradeLevel: 1
     damageIncrease: 2
-    speedIncrease: 0.1
+    speedIncrease: 0
     critChanceIncrease: 0.01
-    critDamageIncrease: 0.15
+    critDamageIncrease: 0.11
   - upgradeLevel: 2
     damageIncrease: 3
-    speedIncrease: 0.2
+    speedIncrease: 0
     critChanceIncrease: 0.02
-    critDamageIncrease: 0.17
+    critDamageIncrease: 0.12
   itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
   itemDescription: "\uAC10\uC790\uB098~ \uACFC\uC77C\uC774\uB098~"

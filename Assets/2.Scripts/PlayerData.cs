@@ -76,6 +76,25 @@ public class PlayerData
 
     public void AddGold(int amount)
     {
-        gold += Mathf.RoundToInt(amount * FinalGoldBonus());
+        gold = Mathf.Min(99999, gold + Mathf.RoundToInt(amount * FinalGoldBonus()));
+    }
+
+    // 무기 장착 시 플레이어 스탯 업데이트
+    public void EquipWeapon(WeaponStats newWeaponStats)
+    {
+        // 기존 장착된 무기의 능력치를 빼고 새로 장착한 무기의 능력치를 더함
+        baseDamage += newWeaponStats.baseDamage;
+        criticalChance += newWeaponStats.baseCritChance;
+        criticalDamage += newWeaponStats.baseCritDamage;
+
+        // 장착된 무기 능력 업데이트
+        equippedWeaponAttack = newWeaponStats.baseDamage;
+        equippedCritChance = newWeaponStats.baseCritChance;
+        equippedCritDamage = newWeaponStats.baseCritDamage;
+
+        // 로그 출력 (디버그용)
+        Debug.Log($"무기 장착 완료: {newWeaponStats.weaponName}");
+        Debug.Log($"최종 공격력: {baseDamage}, 최종 치명타 확률: {criticalChance}, 최종 치명타 배율: {criticalDamage}");
     }
 }
+
