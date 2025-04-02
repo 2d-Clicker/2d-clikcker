@@ -89,4 +89,13 @@ public class AutoAttackSystem : MonoBehaviour
             Debug.LogError("PlayerStats.Instance가 null. 씬에 PlayerStats 오브젝트가 있는지 확인하기.");
         }
     }
+    public void UpdateAutoAttackSpeed()
+    {
+        if (isAutoAttacking)
+        {
+            StopCoroutine(AutoAttackRoutine()); 
+            StartAutoAttack(); 
+        }
+    }
+
 }
