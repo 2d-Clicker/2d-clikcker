@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
         SpawnNext();
     }
 
-    public void SetupStage()
+    public void SetupStage()// 스테이지별 나오는 적 설정
     {
         spawnList.Clear();
         int stage = stageManager.currentStage;
@@ -60,10 +60,10 @@ public class EnemySpawner : MonoBehaviour
             AddPrefabs(applePrefab, 2);
             AddPrefabs(pineapplePrefab, 2);
         }
-        Shuffle(spawnList);
+        Shuffle(spawnList); 
     }
 
-    void AddPrefabs(GameObject prefab, int count)
+    void AddPrefabs(GameObject prefab, int count) //스테이지에 넣을 적을 매개변수로 투입
     {
         for (int i = 0; i < count; i++)
         {
@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnNext()
+    public void SpawnNext() //리스트의 다음적을 생성하는 메서드 
     {
         if (spawnList.Count == 0)
         {
@@ -91,12 +91,12 @@ public class EnemySpawner : MonoBehaviour
         enemyScript.Initialize();
     }
 
-    public void OnEnemyKilled()
+    public void OnEnemyKilled() //적이 죽었을 때 호출할 메서드
     {
         SpawnNext();
     }
 
-    void Shuffle(List<GameObject> list)
+    void Shuffle(List<GameObject> list) //배치된 리스트에서 순서를 무작위로 배치하는 기능
     {
         for (int i = 0; i < list.Count; i++)
         {
