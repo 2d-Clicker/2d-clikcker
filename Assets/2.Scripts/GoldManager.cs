@@ -41,21 +41,30 @@ public class GoldManager : MonoBehaviour
         UpdateGoldUI();
     }
 
-    public bool SpendGold(int amount) //골드 소모
+    public bool SpendGold(int amount)
+{
+    if (PlayerStats.Instance.playerData.gold >= amount)
     {
-        if (PlayerStats.Instance.playerData.gold >= amount)
+        PlayerStats.Instance.playerData.gold -= amount;
+        Debug.Log($"골드 사용: {amount} | 남은 골드: {PlayerStats.Instance.playerData.gold}");
+        
+        // 골드 UI 업데이트
+        GoldManager goldManager = GameObject.FindObjectOfType<GoldManager>();
+        if (goldManager != null)
         {
-            if (PlayerStats.Instance.playerData.SpendGold(amount))
-            {
-                Debug.Log($"골드 사용. 남은 골드: {PlayerStats.Instance.playerData.gold}");
-                UpdateGoldUI();
-                return true;
-            }
+            goldManager.UpdateGoldUI();
         }
-        Debug.Log("골드 부족");
+        else
+        {
+            Debug.LogError("GoldManager를 찾을 수 없습니다! UI 업데이트 실패");
+        }
+
+        return true;
+    }
+    Debug.Log("골드 부족! 구매 불가.");
         ShowPopup();
         return false;
-    }
+}
 
     void ShowPopup() //골드 부족시 팝업
     {
@@ -75,7 +84,7 @@ public class GoldManager : MonoBehaviour
         PopupError.SetActive(false);
     }
 
-    private void UpdateGoldUI()
+    public void UpdateGoldUI()
     {
         goldText.text = PlayerStats.Instance.playerData.gold.ToString();
         Debug.Log("골드 UI 갱신: " + goldText.text);
