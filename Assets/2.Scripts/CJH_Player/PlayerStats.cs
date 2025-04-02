@@ -61,7 +61,8 @@ public class PlayerStats : MonoBehaviour
                 playerData.criticalDamage = newValue;
                 break;
             case "자동공격":
-                playerData.autoAttackSpeed = newValue;
+                autoAttackSpeed = newValue; 
+                AutoAttackSystem.Instance.UpdateAutoAttackSpeed(); 
                 break;
             case "재화 획득량 증가":
                 playerData.goldBonus = newValue;

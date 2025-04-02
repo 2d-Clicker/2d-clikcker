@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     public void Initialize()
     {
         // 체력 = baseHP × 현재 스테이지
-        maxHP = enemyData.baseHP * stageManager.currentStage;
+        maxHP = enemyData.baseHP * stageManager.currentStage *4  + enemyData.baseHP* stageManager.currentround;
         currentHP = maxHP;
 
         //골드 보상
