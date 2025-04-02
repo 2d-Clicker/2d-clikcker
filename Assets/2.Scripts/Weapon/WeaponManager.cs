@@ -53,9 +53,12 @@ public class WeaponManager : MonoBehaviour
     // 게임 시작 시 무기 초기화
     public void InitializeWeapon()
     {
-        // 게임이 시작되면 기본 능력치로 초기화합니다.
+        if (currentWeaponStats != null)
+        {
+            currentWeaponStats.ResetToDefault(); // 무기 스탯을 기본값으로 초기화
+        }
+
         currentUpgradeLevel = 0; // 강화 레벨 초기화
-        currentWeaponStats = weaponStats; // 기본 능력치
         UpdateWeaponUI(); // UI 업데이트
     }
 
@@ -136,10 +139,6 @@ public class WeaponManager : MonoBehaviour
                     Debug.Log("골드가 부족합니다.");
                 }
             }
-            else
-            {
-                Debug.Log("해당 무기의 강화 비용을 찾을 수 없습니다.");
-            }
         }
         else
         {
@@ -166,7 +165,7 @@ public class WeaponManager : MonoBehaviour
             // 장착된 무기 UI 업데이트: 레벨, 공격력, 치명타 확률
             newWeaponNameText.text = currentWeaponStats.weaponName + " (Lv." + currentUpgradeLevel + ")";
             newWeaponStatsText.text = "공격력: " + currentWeaponStats.baseDamage + "\n\n" +
-                                      "치명타 확률: " + (currentWeaponStats.baseCritChance * 100) + "%";
+                                      "치명타 확률: " + (currentWeaponStats.baseCritChance * 1) + "%";
 
             // 장착된 무기 아이콘 업데이트
             if (currentWeaponStats.itemIcon != null)
