@@ -13,18 +13,14 @@ public class GoldManager : MonoBehaviour
   
     private void Start()
     {
-        if (GameManager.Instance == null)
+        if (PlayerStats.Instance == null || PlayerStats.Instance.playerData == null)
         {
-            Debug.LogError("GameManager.Instance가 null입니다! 씬에 GameManager 오브젝트가 있는지 확인하세요.");
+            Debug.LogError("PlayerStats.Instance 또는 playerData가 존재하지 않습니다");
             return;
         }
 
-        UpdateGoldUI();
-
         goldText = GameObject.Find("GoldTxt").GetComponent<TMP_Text>();
         PopupError = GameObject.Find("PopupError");
-        PopupError.gameObject.SetActive(false);
-        PopupError.SetActive(false);
 
         if (PopupError != null)
         {
@@ -32,32 +28,33 @@ public class GoldManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("PopupError 오브젝트를 찾을 수 없습니다!");
+            Debug.LogError("PopupError 오브젝트를 찾을 수 없습니다");
         }
+        
+        UpdateGoldUI();
     }
 
     public void GetGold(int amount) //골드 획득
     {
-        GameManager.Instance.playerData.gold += amount;
-        Debug.Log($"골드 사용. 남은 골드: {GameManager.Instance.playerData.gold}");
+        PlayerStats.Instance.playerData.AddGold(amount);
+        Debug.Log($"골드 획득. 현재 골드: {PlayerStats.Instance.playerData.gold}");
         UpdateGoldUI();
     }
 
     public bool SpendGold(int amount) //골드 소모
     {
-        if (GameManager.Instance.playerData.gold >= amount)
+        if (PlayerStats.Instance.playerData.gold >= amount)
         {
-            GameManager.Instance.playerData.gold -= amount;
-            Debug.Log($"골드 사용. 남은 골드: {GameManager.Instance.playerData.gold}");
-            UpdateGoldUI();
-            return true;
+            if (PlayerStats.Instance.playerData.SpendGold(amount))
+            {
+                Debug.Log($"골드 사용. 남은 골드: {PlayerStats.Instance.playerData.gold}");
+                UpdateGoldUI();
+                return true;
+            }
         }
-        else
-        {
-            Debug.Log("골드 부족");
-            ShowPopup();
-            return false;
-        }
+        Debug.Log("골드 부족");
+        ShowPopup();
+        return false;
     }
 
     void ShowPopup() //골드 부족시 팝업
@@ -80,7 +77,7 @@ public class GoldManager : MonoBehaviour
 
     private void UpdateGoldUI()
     {
-        goldText.text =  ""+GameManager.Instance.playerData.gold;
-        Debug.Log("골드UI 갱신: " + goldText.text); 
+        goldText.text = PlayerStats.Instance.playerData.gold.ToString();
+        Debug.Log("골드 UI 갱신: " + goldText.text);
     }
 }

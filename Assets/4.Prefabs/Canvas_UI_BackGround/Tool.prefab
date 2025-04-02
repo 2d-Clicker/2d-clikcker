@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 2309633957306294933}
   - component: {fileID: 7047341882861460093}
   - component: {fileID: 7586465598386381490}
+  - component: {fileID: 3103974499664576521}
   m_Layer: 5
   m_Name: EnhanceBtn
   m_TagString: Untagged
@@ -585,31 +586,21 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7047341882861460093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4737262705127409460}
-        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
-        m_MethodName: UpgradeWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
-        m_MethodName: UpgradeWeapon
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &3103974499664576521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888827993136299385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c308cf67abbd844caaed75b46de0f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponManager: {fileID: 4737262705127409460}
+  weaponKey: KnifeGamja
 --- !u!1 &972279253049557020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +2407,7 @@ GameObject:
   - component: {fileID: 3652230456553508901}
   - component: {fileID: 7313408091995827372}
   - component: {fileID: 1487953293484442154}
+  - component: {fileID: 4907016181878129030}
   m_Layer: 5
   m_Name: Tool
   m_TagString: Untagged
@@ -2430,7 +2422,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993508303575312436}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2527,18 +2519,40 @@ MonoBehaviour:
   - itemName: "\uAC10\uC790\uCE7C"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
+    itemPrice: 0
   - itemName: "\uC9E7\uC740\uCE7C"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: 21300000, guid: 8a963c3b47917574fb4f5a228cff5191, type: 3}
+    itemPrice: 0
   - itemName: "\uBE75\uCE7C"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: 21300000, guid: 92a675d17391aed458e07766f7eb162e, type: 3}
+    itemPrice: 0
   - itemName: "\uC2DD\uCE7C"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: 21300000, guid: 167face71c6b0ff4b92054657f7322eb, type: 3}
+    itemPrice: 0
   - itemName: "\uC911\uC2DD\uB3C4"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: 21300000, guid: f2f5dc897648fab43acef14ede2b444a, type: 3}
+    itemPrice: 0
+--- !u!114 &4907016181878129030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993508303575312436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8b7a34b6eb7fd42a54bc3c822f0662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knifeSlot1: {fileID: 6371549231331159965}
+  knifeSlot2: {fileID: 7729994766049780131}
+  knifeSlot3: {fileID: 8778875169939044821}
+  knifeSlot4: {fileID: 7081557100748184399}
+  knifeSlot5: {fileID: 5643533900024609532}
 --- !u!1 &4010413109555904844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,6 +3449,7 @@ GameObject:
   - component: {fileID: 3543194719448945484}
   - component: {fileID: 7840425535317821564}
   - component: {fileID: 497283628325394032}
+  - component: {fileID: 7330478116484064580}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -3463,7 +3478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &7840425535317821564
@@ -3506,6 +3521,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &7330478116484064580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5550666749685378013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fb48cc2e5403543a02b3eb109ac663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - itemName: "\uAC10\uC790\uCE7C"
+    itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
+    itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
+    itemPrice: 0
+  - itemName: "\uC9E7\uC740\uCE7C"
+    itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
+    itemIcon: {fileID: 21300000, guid: 8a963c3b47917574fb4f5a228cff5191, type: 3}
+    itemPrice: 0
+  - itemName: "\uBE75\uCE7C"
+    itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
+    itemIcon: {fileID: 21300000, guid: 92a675d17391aed458e07766f7eb162e, type: 3}
+    itemPrice: 0
+  - itemName: "\uC2DD\uCE7C"
+    itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
+    itemIcon: {fileID: 21300000, guid: 167face71c6b0ff4b92054657f7322eb, type: 3}
+    itemPrice: 0
+  - itemName: "\uC911\uC2DD\uB3C4"
+    itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
+    itemIcon: {fileID: 21300000, guid: f2f5dc897648fab43acef14ede2b444a, type: 3}
+    itemPrice: 0
 --- !u!1 &5597383124385510345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,10 +3665,10 @@ RectTransform:
   - {fileID: 8266270167076700488}
   m_Father: {fileID: 3543194719448945484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -392}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &7278058195457105304
 CanvasRenderer:
@@ -3676,6 +3724,7 @@ MonoBehaviour:
   - itemName: "\uC911\uC2DD\uB3C4"
     itemDescription: "\uC250\uD504\uC758 \uCE7C"
     itemIcon: {fileID: 21300000, guid: f2f5dc897648fab43acef14ede2b444a, type: 3}
+    itemPrice: 0
 --- !u!114 &3977352249066661409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3700,6 +3749,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 0}
   newWeaponNameText: {fileID: 0}
   newWeaponStatsText: {fileID: 0}
+  goldManager: {fileID: 0}
   inventory: {fileID: 6845101513812808277}
 --- !u!1 &5644356680562388863
 GameObject:
@@ -4187,10 +4237,10 @@ RectTransform:
   - {fileID: 3393787645301047696}
   m_Father: {fileID: 3543194719448945484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: 0}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5729433822132228894
 CanvasRenderer:
@@ -4246,6 +4296,7 @@ MonoBehaviour:
   - itemName: "\uAC10\uC790\uCE7C"
     itemDescription: "\uC804 \uC774\uAC78\uB85C \uC0AC\uACFC\uB97C \uAE4E\uC2B5\uB2C8\uB2E4."
     itemIcon: {fileID: -1296007463, guid: d24b72374374e7942877f9e990852b7e, type: 3}
+    itemPrice: 0
 --- !u!114 &4737262705127409460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4270,6 +4321,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 0}
   newWeaponNameText: {fileID: 0}
   newWeaponStatsText: {fileID: 0}
+  goldManager: {fileID: 0}
   inventory: {fileID: 9181995550508837022}
 --- !u!1 &6385225333533782134
 GameObject:
@@ -4964,10 +5016,10 @@ RectTransform:
   - {fileID: 2522435949007004711}
   m_Father: {fileID: 3543194719448945484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -294}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8149680413695340967
 CanvasRenderer:
@@ -5023,6 +5075,7 @@ MonoBehaviour:
   - itemName: "\uC2DD\uCE7C"
     itemDescription: "\uACFC\uC77C\uC744 \uB450\uAC1C\uC529 \uC790\uB97C \uC218 \uC788\uB2E4."
     itemIcon: {fileID: 21300000, guid: 167face71c6b0ff4b92054657f7322eb, type: 3}
+    itemPrice: 0
 --- !u!114 &6149444138293797248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5047,6 +5100,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 0}
   newWeaponNameText: {fileID: 0}
   newWeaponStatsText: {fileID: 0}
+  goldManager: {fileID: 0}
   inventory: {fileID: 5477541994100238978}
 --- !u!1 &7261042270376743181
 GameObject:
@@ -5309,10 +5363,10 @@ RectTransform:
   - {fileID: 1660945783220379152}
   m_Father: {fileID: 3543194719448945484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -98}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5603331868996907783
 CanvasRenderer:
@@ -5368,6 +5422,7 @@ MonoBehaviour:
   - itemName: "\uC9E7\uC740\uCE7C"
     itemDescription: "\uC791\uC740 \uACFC\uC77C\uC740 \uC790\uB97C \uC218 \uC788\uACA0\uC9C0~"
     itemIcon: {fileID: 21300000, guid: 8a963c3b47917574fb4f5a228cff5191, type: 3}
+    itemPrice: 0
 --- !u!114 &2288966714618222736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5392,6 +5447,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 0}
   newWeaponNameText: {fileID: 0}
   newWeaponStatsText: {fileID: 0}
+  goldManager: {fileID: 0}
   inventory: {fileID: 4000028876194631533}
 --- !u!1 &7966628843297899764
 GameObject:
@@ -6140,10 +6196,10 @@ RectTransform:
   - {fileID: 2422410120822324359}
   m_Father: {fileID: 3543194719448945484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 217, y: -196}
-  m_SizeDelta: {x: 434, y: 90}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 90}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8406141504413428344
 CanvasRenderer:
@@ -6199,6 +6255,7 @@ MonoBehaviour:
   - itemName: "\uBE75\uCE7C"
     itemDescription: "\uB9DB\uC788\uC5B4\uC694~"
     itemIcon: {fileID: 0}
+    itemPrice: 0
 --- !u!114 &2370856987427933544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6223,6 +6280,7 @@ MonoBehaviour:
   newWeaponIcon: {fileID: 0}
   newWeaponNameText: {fileID: 0}
   newWeaponStatsText: {fileID: 0}
+  goldManager: {fileID: 0}
   inventory: {fileID: 3335716683240869437}
 --- !u!1 &8858536237825457346
 GameObject:

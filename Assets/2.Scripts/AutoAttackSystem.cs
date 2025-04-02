@@ -67,8 +67,15 @@ public class AutoAttackSystem : MonoBehaviour
 
     private void GrantGold(int gold)
     {
-        UpgradeManager.Instance.playerGold += gold;
-        UpgradeManager.Instance.UpdateGoldUI();
-        Debug.Log($" 자동 공격 {gold} 골드 획득!");
+        if (PlayerStats.Instance != null)
+        {
+            PlayerStats.Instance.playerData.AddGold(gold);
+            UpgradeManager.Instance.UpdateGoldUI();
+            Debug.Log($"자동 공격 {gold} 골드 획득! 현재 골드: {PlayerStats.Instance.playerData.gold}");
+        }
+        else
+        {
+            Debug.LogError("PlayerStats.Instance가 null입니다. 씬에 PlayerStats 오브젝트가 있는지 확인하기.");
+        }
     }
 }
