@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cebe4ddd189c204da835201d67ac9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickGoldReward: 1
 --- !u!114 &385018327043622811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickParticle: {fileID: 4198426637795876447, guid: 52693552fe589bc4ba16850da84e076c, type: 3}
+  clickAudio: {fileID: 8300000, guid: 21ab4a8869547a443959f2e13ce4470e, type: 3}
+  clickAudioVolume: 0.5
